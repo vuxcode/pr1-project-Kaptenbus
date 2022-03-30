@@ -10,7 +10,7 @@
 
 
 <script>
-    var pizzaMenu = ["calzone", "kebbab",];
+    var pizzaMenu = ["Calzone", "Kebbab",];
     var pastaMenu = [];
     var drinkList = [];
     var cart = [];
@@ -25,8 +25,14 @@
         {
             //
             var a = confirm(pizzaMenu[index]);
-            
+
+            //
+            if (a == true)
+            {
+                cart.push(pizzaMenu[index]);
+            }
+
         }
     }
-
+console.log(cart);
 </script>
