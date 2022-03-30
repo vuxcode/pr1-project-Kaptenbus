@@ -10,25 +10,34 @@
 
 
 <script>
+
+    //arrays for the functions
     var pizzaMenu = ["Calzone", "Kebbab",];
     var pastaMenu = [];
     var drinkList = [];
+    
+    //array for "Shopping cart" stores the users input
     var cart = [];
 
+    //Binding the button to the varriable "button1"
     var button1 = document.getElementById("pizzaButton");
-
+    
+    //Binding the function to the varriable "button1"
     button1.addEventListener("click", pizza);
 
+    //Function for the Pizza button
     function pizza()
     {
+        //Making a loop for the pizzaMenu array
         for (var index = 0; index < pizzaMenu.length; index++)
         {
-            //
+            //Output for the user too choose which pizza they want
             var a = confirm(pizzaMenu[index]);
 
-            //
+            //when the user pick a pizza
             if (a == true)
             {
+                //sending the picked pizza to the cart array
                 cart.push(pizzaMenu[index]);
             }
 
