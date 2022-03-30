@@ -8,10 +8,20 @@
 <button id="drinkButton">Drink list</button>
 <button id="cartButton">Shopping cart</button>
 
+
 <script>
-    var pizza = ["calzone", "kebbab"];
-    var pasta = [];
-    var drink = [];
+    var pizzaMenu = ["calzone", "kebbab",];
+    var pastaMenu = [];
+    var drinkList = [];
     var cart = [];
-    console.log(pizza);
+
+    var myButton = document.getElementById("pizzaButton");
+
+    myButton.addEventListener("click", pizza);
+
+    function pizza()
+    {
+        alert("hello");
+    }
+
 </script>
