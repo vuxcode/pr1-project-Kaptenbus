@@ -46,6 +46,13 @@
             var menuEnd = alert("End of menu!");
     }
     
+    //
+    var button2= document.getElementById("pastaButton");
+
+    //
+    button2.addEventListener("click", pasta)
+    
+    //
     function pasta()
     {
         //Loop for the pastaMenu array, since i am creating a function i can use the same name on variable
@@ -56,8 +63,6 @@
 
 
     }
-    
-    pasta();
     //so i can see if the orders store in the array
     console.log(cart);
 </script>
