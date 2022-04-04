@@ -11,7 +11,7 @@ The final program is not the goal! The aim of the project is to show how you hav
 > You can use this section of the file to keep notes about your project as you work on it.
 
 04/04-22
-Thought about making the "shopping cart" after the first menuFunction but will do it after the secound, so i can solve any problems that may occur with not only one menu but two. Will make the troubleshooting easier and no more problems SHOULD occur.
+Thought about making the "shopping cart" after the first menuFunction but will do it after the secound, so i can solve any problems that may occur with not only one menu but two. Will make the troubleshooting easier and no more problems SHOULD occur when adding the third menuFunction.
 
 Menu functions take less time then planned, i belive my idea was was to "clear" in my head making the coding faster. Which also results in less problems.
 (So far)
