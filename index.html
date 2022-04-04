@@ -25,6 +25,13 @@
     //Binding the function to the variable "button1"
     button1.addEventListener("click", pizza);
 
+    //Function so that the user get an alert that it is the end of the menu
+    function endMenu()
+    {
+        //gives the user the output "End of menu!"
+        alert("End of menu!");
+    };
+    
     //Function for the Pizza button
     function pizza()
     {
@@ -42,8 +49,8 @@
             }
 
         }
-            //tells the user the menu has ended
-            var menuEnd = alert("End of menu!");
+    //tells the user the menu has ended
+    endMenu();
     };
     
     //Binding the secound button to var button2
@@ -68,8 +75,8 @@
                 cart.push(pastaMenu[index]);
             }
         }
-
-
+    //tells the user the menu has ended
+    endMenu();
     };
     //so i can see if the orders store in the array
     console.log(cart);
