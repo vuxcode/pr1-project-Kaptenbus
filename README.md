@@ -10,6 +10,8 @@ The final program is not the goal! The aim of the project is to show how you hav
 
 > You can use this section of the file to keep notes about your project as you work on it.
 
+Thought about making the "shopping cart" after the first menuFunction but will do it after the secound, so i can solve any problems that may occur with not only one menu but two. Will make the troubleshooting easier and no more problems SHOULD occur.
+
 # Project Summary
 
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 
