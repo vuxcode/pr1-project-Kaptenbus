@@ -19,10 +19,10 @@
     //array for "Shopping cart" stores the users input
     var cart = [];
 
-    //Binding the button to the varriable "button1"
+    //Binding the button to the variable "button1"
     var button1 = document.getElementById("pizzaButton");
     
-    //Binding the function to the varriable "button1"
+    //Binding the function to the variable "button1"
     button1.addEventListener("click", pizza);
 
     //Function for the Pizza button
@@ -44,25 +44,33 @@
         }
             //tells the user the menu has ended
             var menuEnd = alert("End of menu!");
-    }
+    };
     
-    //
-    var button2= document.getElementById("pastaButton");
+    //Binding the secound button to var button2
+    var button2 = document.getElementById("pastaButton");
 
-    //
-    button2.addEventListener("click", pasta)
+    //Binding the pasta function clickable button2 (pasta button)
+    button2.addEventListener("click", pasta);
     
-    //
+    //pasta menu function
     function pasta()
     {
         //Loop for the pastaMenu array, since i am creating a function i can use the same name on variable
         for (var index = 0; index < pastaMenu.length; index++)
+        {
+            //Output for he user too choose from which pasta they want
+            var b = confirm(pastaMenu[index]);
 
-        //Output for he user too choose from which pasta they want
-        var a = confirm(pastaMenu[index]);
+            //
+            if (b == true)
+            {
+                //store the pasta choice to the order array
+                cart.push(pastaMenu[index]);
+            }
+        }
 
 
-    }
+    };
     //so i can see if the orders store in the array
     console.log(cart);
 </script>
