@@ -12,8 +12,8 @@
 <script>
 
     //arrays for the functions
-    var pizzaMenu = ["Calzone", "Kebbab", "Margarita",];
-    var pastaMenu = [];
+    var pizzaMenu = ["Calzone", "Kebbab", "Margherita",];
+    var pastaMenu = ["Bolognese", "Carbonara", "Lasagne",];
     var drinkList = [];
     
     //array for "Shopping cart" stores the users input
@@ -45,5 +45,19 @@
             //tells the user the menu has ended
             var menuEnd = alert("End of menu!");
     }
-console.log(cart);
+    
+    function pasta()
+    {
+        //Loop for the pastaMenu array, since i am creating a function i can use the same name on variable
+        for (var index = 0; index < pastaMenu.length; index++)
+
+        //Output for he user too choose from which pasta they want
+        var a = confirm(pastaMenu[index]);
+
+
+    }
+    
+    pasta();
+    //so i can see if the orders store in the array
+    console.log(cart);
 </script>
