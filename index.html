@@ -45,7 +45,7 @@
             if (a == true)
             {
                 //sending the picked pizza to the cart array
-                cart.push(pizzaMenu[index]);
+                cart.push(pizzaMenu[index] + "\n");
             }
 
         }
@@ -72,11 +72,40 @@
             if (b == true)
             {
                 //store the pasta choice to the order array
-                cart.push(pastaMenu[index]);
+                cart.push(pastaMenu[index] + "\n");
             }
         }
     //tells the user the menu has ended
     endMenu();
+    };
+    
+    //Binding the forth button to variable
+    var button4 = document.getElementById("cartButton");
+
+    //Binding the shoppingCart function to button4
+    button4.addEventListener("click", shoppingCart);
+
+    //shopping cart
+    function shoppingCart()
+    {
+        
+        var a = confirm("Press OK to accept order, CANCEL to decline." + "\n" + cart);
+
+        //cart = cart.toLowerCase();
+
+        if (a == false)
+        {
+
+            alert("Thank you, come again!");
+            cart = [];
+
+        }
+        else
+        {
+            alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!")
+
+            cart = [];
+        };
     };
     //so i can see if the orders store in the array
     console.log(cart);
