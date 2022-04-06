@@ -10,7 +10,7 @@ For example:
   - *Testing first function*
   - *Testing my cart array if it store the order, seems to work fine. even stores the next order if you use the menu twice*
 
-- 2022-04-04 15:00 Worked for 2.5 hours.
+- 2022-04-04 15:00 Worked for 3 hours.
   - *Added an alert that tells the user that the menu has ended*
   - *Tested the so the alert showed where it was intendet*
   - *Tested the program again since it was a long time that i worked on it to remind me how far i got and that the program was working so far*
@@ -18,3 +18,9 @@ For example:
   - *Created pasta function and tested the function*
   - *Binded the pastaMenu to it's button*
   - *Changed the endMenu alert to a function and tested the function*
+
+- 2022-04-06 13:00 Worked for 3 hours.
+  - *Binded the button to the shopping cart function*
+  - *It took time to figure out how i wanted the cart to look, still not 100% happy with the look*
+  - *Made the shopping cart function, works as i wanted it to. Worked great*
+  - *Made an extra array for perhaps a future feature*
