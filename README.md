@@ -21,7 +21,7 @@ Made the shopping cart function, can't find a way to get rid of the arrays "," i
 
 Note to self: Maybe a four-loop confirmation delete?
 
-Note to self: Don't for get to commit the changes, while testing etc.
+Note to self: Don't forget to commit the changes, while testing etc.
 
 Still going faster then expected, i belive i will continue as planned and when the program is finished i will try to make the extra features.
 
