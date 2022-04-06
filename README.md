@@ -17,7 +17,9 @@ Menu functions take less time then planned, i belive my idea was was to "clear" 
 (So far)
 
 06/04-22
-Made the shopping cart function, can't find a way to get rid of the arrays "," in the user output. Shopping function would look better without it, buggs me. Function works great, no problems with the menu orders so far. Made an additional array to store the old cart, could possibly make a new button that could delete unwanted objects (just an idea). (Note to self: maybe a four-loop confirmation delete?)
+Made the shopping cart function, can't find a way to get rid of the arrays "," in the user output. Shopping function would look better without it, buggs me. Function works great, no problems with the menu orders so far. Made an additional array to store the old cart, could possibly make a new button that could delete unwanted objects (just an idea).
+Note to self: Maybe a four-loop confirmation delete?
+Note to self: Don't for get to commit the changes, while testing etc.
 
 Still going faster then expected, i belive i will continue as planned and when the program is finished i will try to make the extra features.
 
