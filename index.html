@@ -18,6 +18,9 @@
     
     //array for "Shopping cart" stores the users input
     var cart = [];
+    
+    //cart for deleting/changing order (future feature)
+    var cart1 = [];
 
     //Binding the button to the variable "button1"
     var button1 = document.getElementById("pizzaButton");
@@ -88,22 +91,30 @@
     //shopping cart
     function shoppingCart()
     {
-        
+        //Output for the user to see the order and accept/decline order.
         var a = confirm("Press OK to accept order, CANCEL to decline." + "\n" + cart);
 
-        //cart = cart.toLowerCase();
-
+        //if the user declines the order
         if (a == false)
         {
-
+            //Output for the user
             alert("Thank you, come again!");
+            
+            //storing the old saved cart in a new for future features
+            cart1 = cart
+
+            //Emptying the shopping cart
             cart = [];
 
         }
+
+        //if the user accepts the order
         else
         {
-            alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!")
+            //Output for the user after accepting the order
+            alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
+            //Emptying the shopping cart
             cart = [];
         };
     };
