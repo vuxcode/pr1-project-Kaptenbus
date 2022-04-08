@@ -7,6 +7,7 @@
 <button id="pastaButton">Pasta menu</button>
 <button id="drinkButton">Drink list</button>
 <button id="cartButton">Shopping cart</button>
+<button id="changeButton">Change order</button>
 
 
 <script>
@@ -104,7 +105,7 @@
         }
      //tell the user that the menu has ended
      endMenu();    
-    }
+    };
 
 
     //Binding the forth button to variable
@@ -145,4 +146,15 @@
     };
     //so i can see if the orders store in the array
     console.log(cart);
+
+    //
+    var button5 = document.getElementById("changeButton");
+
+    //
+    button5.addEventListener("click", changeOrder);
+
+    function changeOrder()
+    {
+        alert("hello")
+    }
 </script>
