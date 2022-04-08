@@ -24,3 +24,11 @@ For example:
   - *It took time to figure out how i wanted the cart to look, still not 100% happy with the look*
   - *Made the shopping cart function, works as i wanted it to. Worked great*
   - *Made an extra array for perhaps a future feature*
+
+- 2022-04-08 13:00 Worked for hours.
+  - *Added more menu options*
+  - *Binding the drink button*
+  - *Making the drink function and testing it*
+  - *Changed the drinkList to drinkMenu to easier remember the variable since the others are named Menu*
+  - *Made the changeOrder function, took some time, had some problems (noted in bug-list)*
+  - *Needed to change how i save my orders to the arrays (so far only changed at one menu)*
