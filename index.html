@@ -95,7 +95,15 @@
         {
             //Output for the user to choose which drink they want
             var c = confirm(drinkMenu[index]);
+
+            if (c == true)
+            {
+                //Store the drink choice
+                cart.push(drinkMenu[index] + "\n");
+            }
         }
+     //tell the user that the menu has ended
+     endMenu();    
     }
 
 
