@@ -14,7 +14,7 @@
     //arrays for the functions
     var pizzaMenu = ["Calzone", "Kebbab", "Margherita", "Capricosa", "Hawaiian",];
     var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli",];
-    var drinkList = ["Pepsi", "Fanta", "Sprite", "Water",];
+    var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water",];
     
     //array for "Shopping cart" stores the users input
     var cart = [];
@@ -91,10 +91,10 @@
     function drink()
     {
         //Loop for the drinkMenu array
-        for (var index = 0; index < drinkList.length; index++)
+        for (var index = 0; index < drinkMenu.length; index++)
         {
             //Output for the user to choose which drink they want
-            var c = confirm(drinkList[index]);
+            var c = confirm(drinkMenu[index]);
         }
     }
 
