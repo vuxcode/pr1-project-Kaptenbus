@@ -147,28 +147,33 @@
     //so i can see if the orders store in the array
     console.log(cart);
 
-    //
+    //Binding the fifth button to the variable
     var button5 = document.getElementById("changeButton");
 
-    //
+    //Binding the changeOrder function to button5
     button5.addEventListener("click", changeOrder);
 
     function changeOrder()
     {
-        //for (var index = 0; index < cart1.length; index++)
-        //{
-            var d = prompt(cart1);
+        //Output for the user
+        var d = prompt("Write which item you want to remove." + "\n" + cart1);
 
-            if (d)
-            {
-                var start = cart1.indexOf(d);
-                var deleteindex = 1;
-                var remove = cart1.splice(start, deleteindex);
-                console.log(cart1);
+        if (d)
+        {
+            //var start will have the index of the users input of the prompt
+            var start = cart1.indexOf(d);
+
+            var deleteindex = 1;
                 
-                console.log(remove);
-            }
-            //else{
+            //Removes the users input
+            var remove = cart1.splice(start, deleteindex);
+                
+            //show excisting cart
+            console.log(cart1);
+            //show item removed
+            console.log(remove);
+        }
+        //else{
 
             
 
