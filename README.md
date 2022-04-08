@@ -25,6 +25,12 @@ Note to self: Don't forget to commit the changes, while testing etc.
 
 Still going faster then expected, i belive i will continue as planned and when the program is finished i will try to make the extra features.
 
+08/04-22
+Orignal idea complete, started the changeOrder feature. Had problems with my arrays since i push([index] + "\n") which result in an array that looks like ["Pepsi,\n"].
+Causing trouble with the array to interact with an if-statement and also made my splice function to remove the wrong array.
+
+Need to rework the push functions on the other menu's and need to find a new way for my shopping cart to look. (since the function work)
+
 
 # Project Summary
 
