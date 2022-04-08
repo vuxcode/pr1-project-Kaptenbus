@@ -100,7 +100,7 @@
             if (c == true)
             {
                 //Store the drink choice
-                cart.push(drinkMenu[index] + "\n");
+                cart.push(drinkMenu[index]); //+ "\n");
             }
         }
      //tell the user that the menu has ended
@@ -159,13 +159,18 @@
         //{
             var d = prompt(cart1);
 
-            if (cart1.includes(d))
+            if (d)
             {
-                alert("hi")
+                var start = cart1.indexOf(d);
+                var deleteindex = 1;
+                var remove = cart1.splice(start, deleteindex);
+                console.log(cart1);
+                
+                console.log(remove);
             }
-            else{
-                alert("hello")
-            }
+            //else{
+
+            
 
 
         //}
