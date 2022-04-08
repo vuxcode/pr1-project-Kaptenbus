@@ -153,12 +153,13 @@
     //Binding the changeOrder function to button5
     button5.addEventListener("click", changeOrder);
 
+    //so the user can change their order
     function changeOrder()
     {
         //Output for the user
         var d = prompt("Write which item you want to remove." + "\n" + cart1);
 
-        if (d)
+        if (cart1.includes(d))
         {
             //var start will have the index of the users input of the prompt
             var start = cart1.indexOf(d);
@@ -167,17 +168,22 @@
                 
             //Removes the users input
             var remove = cart1.splice(start, deleteindex);
-                
-            //show excisting cart
+
+            //NOTE TO SELF: REMEMBER TO PUSH NEW CART TO SHOPPING CART!
+            
+            //show excisting cart 
             console.log(cart1);
             //show item removed
             console.log(remove);
         }
-        //else{
+        //NOTE TO SELF: MAKE 2 ELSE IF FOR TRUE FALSE
 
-            
+        //if the users input is anything else except the menu option
+        else
+        {
+            //output for the user
+            alert("Only text is allowed!");
+        }
 
-
-        //}
     }
 </script>
