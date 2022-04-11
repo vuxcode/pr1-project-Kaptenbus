@@ -29,6 +29,7 @@
     //Binding the function to the variable "button1"
     button1.addEventListener("click", pizza);
 
+
     //Function so that the user get an alert that it is the end of the menu
     function endMenu()
     {
@@ -117,8 +118,18 @@
     //shopping cart
     function shoppingCart()
     {
+        //new variable
+        var listCart = "";
+
+        //a loop to show each item from the cart array
+        for (var index = 0; index < cart.length; index++)
+        {
+            //new variable += the cart index starting from the first item (0) + a newline
+            listCart += cart[index] + "\n";
+        }
+
         //Output for the user to see the order and accept/decline order.
-        var a = confirm("Press OK to accept order, CANCEL to decline." + "\n" + cart);
+        var a = confirm("Press OK to accept order, CANCEL to decline." + "\n" + listCart);
 
         //if the user declines the order
         if (a == false)
