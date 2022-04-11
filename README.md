@@ -29,6 +29,13 @@ Causing trouble with the array to interact with an if-statement and also made my
 
 Need to rework the push functions on the other menu's and need to find a new way for my shopping cart to look. (since the function work)
 
+11/04-22
+The look of the carts is complete. changeOrder function now works with all the menus.
+
+Was going to make the code that made the carts showing as lists to a function but since i use 2 different "carts" i where "forced" to write them in both shoppingCart function and the changeOrder function.
+
+Went through my code to see if i wanted to change anything, found some strings and comments to change.
+
 
 # Project Summary
 
