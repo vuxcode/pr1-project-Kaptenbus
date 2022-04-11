@@ -25,10 +25,18 @@ For example:
   - *Made the shopping cart function, works as i wanted it to. Worked great*
   - *Made an extra array for perhaps a future feature*
 
-- 2022-04-08 13:00 Worked for hours.
+- 2022-04-08 13:00 Worked for 3 hours.
   - *Added more menu options*
   - *Binding the drink button*
   - *Making the drink function and testing it*
   - *Changed the drinkList to drinkMenu to easier remember the variable since the others are named Menu*
   - *Made the changeOrder function, took some time, had some problems (noted in bug-list)*
   - *Needed to change how i save my orders to the arrays (so far only changed at one menu)*
+
+- 2022-04-11 16:00 Worked for 2 hours.
+  - *Changed the how the menus stores in the array*
+  - *Tested to add all items in to the change order, could delete the items i choose (function works)*
+  - *Changed the shopping cart into a "list"*
+  - *Changed the changeOrder function so the user had their orders like an list for easier reading*
+  - *Tested to add all items again to see if the changeOrder functions work as it should after the changes (it did)*
+  - *Went through the program, changed comments and some strings*
