@@ -17,10 +17,10 @@
     var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli",];
     var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water",];
     
-    //array for "Shopping cart" stores the users input
+    //array for shoppingCart function stores the users input
     var cart = [];
     
-    //cart for deleting/changing order (future feature)
+    //cart for changeOrder function
     var cart1 = [];
 
     //Binding the button to the variable "button1"
@@ -36,7 +36,7 @@
         alert("End of menu!");
     };
     
-    //Function for the Pizza button
+    //Function for the "Pizza menu" button
     function pizza()
     {
         //Making a loop for the pizzaMenu array
@@ -97,6 +97,7 @@
             //Output for the user to choose which drink they want
             var c = confirm(drinkMenu[index]);
 
+            //user picks a drink which will
             if (c == true)
             {
                 //Store the drink choice
@@ -113,7 +114,7 @@
     //Binding the shoppingCart function to button4
     button4.addEventListener("click", shoppingCart);
 
-    //shopping cart
+    //Function for the "Shopping cart" button.
     function shoppingCart()
     {
         //new variable
@@ -127,15 +128,15 @@
         }
 
         //Output for the user to see the order and accept/decline order.
-        var a = confirm("Press OK to accept order, CANCEL to decline." + "\n" + listCart);
+        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + listCart);
 
         //if the user declines the order
         if (a == false)
         {
             //Output for the user
-            alert("Thank you, come again!");
+            alert("If you wish to change order, use the 'Change order' button");
             
-            //storing the old saved cart in a new for future features
+            //store the cart array to the cart1 array
             cart1 = cart
 
             //Emptying the shopping cart
@@ -171,7 +172,7 @@
         //a loop to show each item from the cart array
         for (var index = 0; index < cart1.length; index++)
         {
-            ////listCart1 += the cart1[index] starting from the first item [0] + a newline
+            //listCart1 += the cart1[index] starting from the first item [0] + a newline
             listCart1 += cart1[index] + "\n";
         }
         //Output for the user
