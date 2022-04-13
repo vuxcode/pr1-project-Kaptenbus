@@ -176,16 +176,13 @@
             listCart1 += cart1[index] + "\n";
         }
         //Output for the user
-        var d = prompt("Write which item you want to remove." + "\n" + listCart1);
+        var d = prompt("Write which item you want to remove."+ "\n" + "Write 'DONE' when the order is complete." + "\n" + listCart1);
 
         //make the users input to lowercase
         d = d.toLowerCase();
 
         //Users input then make a uppercase first letter then + the rest of the users input
         d = d.charAt(0).toUpperCase() + d.slice(1);
-        
-        //what var d will output
-        console.log(d);
 
         if (cart1.includes(d))
         {
@@ -197,14 +194,20 @@
             //Removes the users input
             var remove = cart1.splice(start, deleteindex);
 
-            //NOTE TO SELF: REMEMBER TO PUSH NEW CART TO SHOPPING CART!
-            
             //show excisting cart 
             console.log(cart1);
             //show item removed
             console.log(remove);
         }
-        //NOTE TO SELF: MAKE 2 ELSE IF FOR TRUE FALSE
+        //if the user is done with the changes in the order
+        else if (d == "Done")
+        {
+            //store the "Change order" cart into the "Shopping cart" cart
+            cart = cart1
+
+            //Emptying the "Change order" cart
+            cart1 = [];
+        }
 
         //if the users input is anything else except the menu option
         else
