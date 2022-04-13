@@ -178,6 +178,12 @@
         //Output for the user
         var d = prompt("Write which item you want to remove." + "\n" + listCart1);
 
+        //make the users input to lowercase
+        d = d.toLowerCase();
+
+        //since the input will be false, i want to check the output so it works.
+        console.log(d);
+
         if (cart1.includes(d))
         {
             //var start will have the index of the users input of the prompt
