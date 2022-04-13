@@ -40,3 +40,10 @@ For example:
   - *Changed the changeOrder function so the user had their orders like an list for easier reading*
   - *Tested to add all items again to see if the changeOrder functions work as it should after the changes (it did)*
   - *Went through the program, changed comments and some strings*
+
+- 2022-04-13 16:00 Worked for 2 hours.
+  - *Wrote a "code" which make the user input in the changeOrder prompt failproof*
+  - *Testing the code in different ways ended up finding a error*
+  - *Tried fixing an error that i got from my "failproof code" with different type of if-statments and position of code etc, have not been able to solve it yet but clearly need to have it inside an statement i belive. But the code works as i wanted*
+  - *Added so the changeOrder function now when you are done "send" the order to the shopping cart once again*
+  - *Added so if you now accept an order it will clear your changeOrder aswell*
