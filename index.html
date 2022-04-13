@@ -181,7 +181,9 @@
         //make the users input to lowercase
         d = d.toLowerCase();
 
-        //since the input will be false, i want to check the output so it works.
+
+        d = d.charAt(0).toUpperCase() + d.slice(1);
+        //what var d will output
         console.log(d);
 
         if (cart1.includes(d))
