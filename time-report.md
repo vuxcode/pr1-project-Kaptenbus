@@ -47,3 +47,8 @@ For example:
   - *Tried fixing an error that i got from my "failproof code" with different type of if-statments and position of code etc, have not been able to solve it yet but clearly need to have it inside an statement i belive. But the code works as i wanted*
   - *Added so the changeOrder function now when you are done "send" the order to the shopping cart once again*
   - *Added so if you now accept an order it will clear your changeOrder aswell*
+
+- 2022-04-15 16:00 Worked for 2 hours.
+  - *Made some changes in the shopping cart so the user could choose to "decline" the order or change it, before when you "declined" the order it would still "send" the order to changeOrder.*
+  - *Fixed the error that i got last time i was "coding"*
+  - *Changed the look of the "frontpage"*
