@@ -40,7 +40,9 @@ Went through my code to see if i wanted to change anything, found some strings a
 had an issue with my prompt in the changeOrder function when pressing cancel it gets an error with my .toLowerCase since it's not a string tried making an else if so it could react to the null error but dident get it to work. Same issue with my code to make the first letter in the users input to upperCase when i hide the lowerCase code. 
 
 15/04-22
-fixed my error and my "completed" the shopping cart function. 
+fixed my error and my "completed" the shopping cart function.
+
+Note to self: Maybe  try to hide "Change order" button until the user wants to change?
 
 
 # Project Summary
