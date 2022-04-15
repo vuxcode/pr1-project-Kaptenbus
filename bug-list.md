@@ -12,5 +12,5 @@
 - Solution, when i push my orders it saves the menu option and an + "\n" had to remove the "\n" so it could be "true"
 5. Couldn't delete the proper index of the cart1 array
 - Solution, same as issue 4, the + "\n" was messing with the array if the array was ["Pepsi",] it would be ["Pepsi\n",]
-6. My d = d.toLowerCase(); make an error in the console when using cancel in changeOrder function
-- Solution, not solvde 13/04-22
+6. My order = order.toLowerCase(); make an error in the console when using cancel in changeOrder function
+- Solution, put everything inside an if-statement so the OK or CANCEL on the confirm doesn't get involved with the lowerCase function.
