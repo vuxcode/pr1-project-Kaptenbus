@@ -134,16 +134,22 @@
         if (a == false)
         {
             //Output for the user
-            var declineOrder = confirm("If you wish to change order, use the 'Change order' button");
+            var declineOrder = confirm("If you wish to change order press 'OK' if not press 'CANCEL'.");
 
+            //if the user decide to change the order
             if (declineOrder == true)
             {
+                //"send" the shopping cart's cart to change order cart
                 cart1 = cart
-                
+
+                //emptying the shopping cart
+                cart = [];
             }
 
+            //if user don't want to change order
             else
             {
+                //Emptying the shopping cart
                 cart = [];
             }
         }
