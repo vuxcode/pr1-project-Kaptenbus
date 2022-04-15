@@ -135,12 +135,17 @@
         {
             //Output for the user
             var declineOrder = confirm("If you wish to change order, use the 'Change order' button");
+
+            if (declineOrder == true)
+            {
+                cart1 = cart
+            }
             
             //store the cart array to the cart1 array
-            cart1 = cart
+            //cart1 = cart
 
             //Emptying the shopping cart
-            cart = [];
+            //cart = [];
 
             // ADD SO THEY CAN CHOOSE TO CHANGE OR DECLINE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
