@@ -144,9 +144,15 @@
             //if the user decide to change the order
             if (declineOrder == true)
             {
+                //if user want to change the order the "Change order" button is visible
                 button5 = document.getElementById("changeButton").style.visibility = 'visible';
+
+                //Updating the variable (if i not i would get an error with the add.EventListener)
                 button5 = document.getElementById("changeButton")
+                
+                //making the button clickable and binding it to changeOrder function.
                 button5.addEventListener("click", changeOrder);
+                
                 //"send" the shopping cart's cart to change order cart
                 cart1 = cart
 
@@ -178,12 +184,8 @@
     //so i can see if the orders store in the array
     console.log(cart);
 
-    //Binding the fifth button to the variable
+    //making a varialbe for the Change order button and hides it, rest of button code is in the shoppingCart();
     var button5 = document.getElementById("changeButton").style.visibility = 'hidden';
-
-
-    //button5.addEventListener("click", changeOrder);
-    
 
     //so the user can change their order
     function changeOrder()
@@ -228,7 +230,9 @@
             //if the user is done with the changes in the order
             else if (order == "Done")
             {
+                //when the user is done with changing the order it hides the Change order button
                 button5 = document.getElementById("changeButton").style.visibility = 'hidden';
+
                 //store the "Change order" cart into the "Shopping cart" cart
                 cart = cart1
 
