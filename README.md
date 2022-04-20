@@ -44,6 +44,9 @@ fixed my error and my "completed" the shopping cart function.
 
 Note to self: Maybe  try to hide "Change order" button until the user wants to change?
 
+20/04-22
+going to add price for the object, need to think about how i want it to work
+
 
 # Project Summary
 
