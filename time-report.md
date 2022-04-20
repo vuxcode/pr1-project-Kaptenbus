@@ -52,3 +52,8 @@ For example:
   - *Made some changes in the shopping cart so the user could choose to "decline" the order or change it, before when you "declined" the order it would still "send" the order to changeOrder.*
   - *Fixed the error that i got last time i was "coding"*
   - *Changed the look of the "frontpage"*
+
+- 2022-04-20 12:00 Worked for 2 hours.
+  - *Made the "Change order" button hidden while the user not using it*
+  - *Made the buttons and text display in the center*
+  - *Made an array for item pricing, tried some for loop ways to inplement it in the menus, did not work as expected need some "thinking" time*
