@@ -14,3 +14,6 @@
 - Solution, same as issue 4, the + "\n" was messing with the array if the array was ["Pepsi",] it would be ["Pepsi\n",]
 6. My order = order.toLowerCase(); make an error in the console when using cancel in changeOrder function
 - Solution, put everything inside an if-statement so the OK or CANCEL on the confirm doesn't get involved with the lowerCase function.
+7. Made "Change order" button hidden when the user does not use it, had issues with the .addEventListner not working with 
+.getElementById("changeButton").style.visibility so the function wouldent work
+- Solution, as i updated the variable to shown i also needed to update it again to "normal form" .getElementById("changeButton");
