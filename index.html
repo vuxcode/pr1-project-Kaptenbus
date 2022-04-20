@@ -175,8 +175,8 @@
     //so i can see if the orders store in the array
     console.log(cart);
 
-    //Binding the fifth button to the variable
-    var button5 = document.getElementById("changeButton");
+    //Binding the fifth button to the variable and hiding the button
+    var button5 = document.getElementById("changeButton").style.visibility = "hidden";
 
     //Binding the changeOrder function to button5
     button5.addEventListener("click", changeOrder);
