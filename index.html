@@ -23,7 +23,7 @@
     var pizzaMenu = ["Calzone", "Kebbab", "Margherita", "Capricosa", "Hawaiian",];
     var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli",];
     var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water",];
-    var cost = ["80", "70", "10",];
+    var cost = [];
     
     //array for shoppingCart function stores the users input
     var cart = [];
@@ -51,13 +51,15 @@
         for (var index = 0; index < pizzaMenu.length; index++)
         {
             //Output for the user too choose which pizza they want
-            var a = confirm(pizzaMenu[index] + cost[0]);
+            var a = confirm(pizzaMenu[index] + " " + 70 + ":-");
 
             //when the user pick a pizza
             if (a == true)
             {
                 //sending the picked pizza to the cart array
                 cart.push(pizzaMenu[index]);
+
+                cost.push(70);
             }
 
         }
@@ -135,8 +137,19 @@
             listCart += cart[index] + "\n";
         }
 
+        var total = 0;
+
+        //
+        for (var index1 = 0; index1 < cost.length; index1++)
+        {
+            //
+            total += cost[index1];
+
+            console.log(total);
+        }
+
         //Output for the user to see the order and accept/decline order.
-        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + listCart);
+        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + listCart + total);
 
         //if the user declines the order
         if (a == false)
