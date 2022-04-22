@@ -23,7 +23,11 @@
     var pizzaMenu = ["Calzone", "Kebbab", "Margherita", "Capricosa", "Hawaiian",];
     var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli",];
     var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water",];
+    
+    //array to store the users picked item prices
     var cost = [];
+    
+    //store the new prices when user removes an item
     var cost1 = [];
     
     //array for shoppingCart function stores the users input
@@ -51,7 +55,7 @@
         //Making a loop for the pizzaMenu array
         for (var index = 0; index < pizzaMenu.length; index++)
         {
-            //Output for the user too choose which pizza they want
+            //Output for the user too choose which pizza they want + the price
             var a = confirm(pizzaMenu[index] + " " + 70 + ":-");
 
             //when the user pick a pizza
@@ -60,6 +64,7 @@
                 //sending the picked pizza to the cart array
                 cart.push(pizzaMenu[index]);
 
+                //every time user picks a pizza it adds the price in the cost array
                 cost.push(70);
             }
 
@@ -100,12 +105,13 @@
     //Binding the drink function to button3 
     button3.addEventListener("click", drink);
 
+    //drink list function
     function drink()
     {
         //Loop for the drinkMenu array
         for (var index = 0; index < drinkMenu.length; index++)
         {
-            //Output for the user to choose which drink they want
+            //Output for the user to choose which drink they want + the price
             var c = confirm(drinkMenu[index] + " " + 10 + ":-");
 
             //user picks a drink which will
@@ -114,7 +120,7 @@
                 //Store the drink choice
                 cart.push(drinkMenu[index]);
 
-                //
+                //every time user picks a drink it adds the price in the cost array
                 cost.push(10);
             }
         }
@@ -141,15 +147,14 @@
             listCart += cart[index] + "\n";
         }
 
+        //new variable
         var total = 0;
 
-        //
+        //loop for the cost array
         for (var index1 = 0; index1 < cost.length; index1++)
         {
-            //
+            //makes all index of the cost to total sum (index0 + index1 and so on) that is shown in the total variable
             total += cost[index1];
-
-            console.log(total);
         }
 
         //Output for the user to see the order and accept/decline order.
@@ -179,10 +184,11 @@
                 //emptying the shopping cart
                 cart = [];
 
+                //"send" the cost array to the cost cart in changeOrder function
                 cost1 = cost
 
+                //emptying the cost array
                 cost = [];
-
             }
 
             //if user don't want to change order
@@ -206,8 +212,6 @@
             cart1 = [];
         };
     };
-    //so i can see if the orders store in the array
-    console.log(cart);
 
     //making a varialbe for the Change order button and hides it, rest of button code is in the shoppingCart();
     var button5 = document.getElementById("changeButton").style.visibility = 'hidden';
@@ -247,15 +251,16 @@
                 //Removes the users input
                 var remove = cart1.splice(start, deleteindex);
 
+                //removes the RIGHT price
                 var removeCost = cost1.splice(start, deleteindex);
 
                 //show excisting cart 
                 console.log(cart1);
                 //show item removed
                 console.log(remove);
-
+                //show excisting cost
                 console.log(cost1)
-                
+                //show which price removed
                 console.log(removeCost);
             }
             //if the user is done with the changes in the order
