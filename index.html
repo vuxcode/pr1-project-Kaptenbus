@@ -183,7 +183,6 @@
 
                 cost = [];
 
-                console.log(cost1)
             }
 
             //if user don't want to change order
@@ -248,10 +247,16 @@
                 //Removes the users input
                 var remove = cart1.splice(start, deleteindex);
 
+                var removeCost = cost1.splice(start, deleteindex);
+
                 //show excisting cart 
                 console.log(cart1);
                 //show item removed
                 console.log(remove);
+
+                console.log(cost1)
+                
+                console.log(removeCost);
             }
             //if the user is done with the changes in the order
             else if (order == "Done")
