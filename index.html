@@ -24,6 +24,7 @@
     var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli",];
     var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water",];
     var cost = [];
+    var cost1 = [];
     
     //array for shoppingCart function stores the users input
     var cart = [];
@@ -105,13 +106,16 @@
         for (var index = 0; index < drinkMenu.length; index++)
         {
             //Output for the user to choose which drink they want
-            var c = confirm(drinkMenu[index]);
+            var c = confirm(drinkMenu[index] + " " + 10 + ":-");
 
             //user picks a drink which will
             if (c == true)
             {
                 //Store the drink choice
                 cart.push(drinkMenu[index]);
+
+                //
+                cost.push(10);
             }
         }
      //tell the user that the menu has ended
@@ -174,6 +178,12 @@
 
                 //emptying the shopping cart
                 cart = [];
+
+                cost1 = cost
+
+                cost = [];
+
+                console.log(cost1)
             }
 
             //if user don't want to change order
