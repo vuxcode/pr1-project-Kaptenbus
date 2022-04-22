@@ -57,3 +57,10 @@ For example:
   - *Made the "Change order" button hidden while the user not using it*
   - *Made the buttons and text display in the center*
   - *Made an array for item pricing, tried some for loop ways to inplement it in the menus, did not work as expected need some "thinking" time*
+
+- 2022-04-22 10:00 Worked for 2 hours.
+  - *Changed my pricing idea to each menu have a different price, not every item*
+  - *Adding the pricing so that the user see what the items cost*
+  - *Adding cost arrays (cost & cost1) and adding them to the pizza and drink functions (to .push the item price in them)*
+  - *Added a loop which work as a total cost of the items the user pick (in the Shopping cart)*
+  - *Added so when the user wants to remove an item it also remove the cost of that item (took a while to figure that out)*
