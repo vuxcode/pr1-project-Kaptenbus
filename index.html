@@ -26,15 +26,9 @@
     
     //array to store the users picked item prices
     var cost = [];
-    
-    //store the new prices when user removes an item
-    //var cost1 = [];
-    
+
     //array for shoppingCart function stores the users input (choices from the menus)
     var cart = [];
-    
-    //cart for changeOrder function used to
-    //var cart1 = [];
 
     //Binding the button to the variable "button1"
     var button1 = document.getElementById("pizzaButton");
@@ -180,18 +174,6 @@
                 
                 //making the button clickable and binding it to changeOrder function.
                 button5.addEventListener("click", changeOrder);
-                
-                //"send" the shopping cart's cart to change order cart
-                //cart1 = cart
-
-                //emptying the shopping cart
-                //cart = [];
-
-                //"send" the cost array to the cost cart in changeOrder function
-                //cost1 = cost
-
-                //emptying the cost array
-                //cost = [];
             }
 
             //if user don't want to change order
@@ -211,11 +193,11 @@
             //Output for the user after accepting the order
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
-            //Emptying the shopping cart
+            //Emptying the cart array
             cart = [];
 
-            //Emptying the changeOrder cart
-            //cart1 = [];
+            //Emptying the cost array
+            cost = [];
         };
     };
 
@@ -274,12 +256,6 @@
             {
                 //when the user is done with changing the order it hides the Change order button
                 button5 = document.getElementById("changeButton").style.visibility = 'hidden';
-
-                //store the "Change order" cart into the "Shopping cart" cart
-                //cart = cart1
-
-                //Emptying the "Change order" cart
-                //cart1 = [];
             }
             //any spelling errors or numbers in the users input
             else
