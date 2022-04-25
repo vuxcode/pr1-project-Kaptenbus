@@ -86,13 +86,16 @@
         for (var index = 0; index < pastaMenu.length; index++)
         {
             //Output for he user too choose from which pasta they want
-            var b = confirm(pastaMenu[index]);
+            var b = confirm(pastaMenu[index] + " " + 80 + ":-");
 
             //user picks pasta which will
             if (b == true)
             {
-                //store the pasta choice to the order array
+                //store the pasta choice to the order array + the price
                 cart.push(pastaMenu[index]);
+                
+                //every time user picks a pasta it adds the price in the cost array
+                cost.push(80);
             }
         }
     //tells the user the menu has ended
