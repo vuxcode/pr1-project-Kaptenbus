@@ -52,6 +52,9 @@ Price idea complete. Works as i intended it to.
 
 Note to self: Add pricing to pasta function and complete the shopping cart
 
+25/04-22
+Make a function that "emptying" the arrays. Maybe make the changeOrder button always visible again? Uppdate the comments.
+
 
 # Project Summary
 
