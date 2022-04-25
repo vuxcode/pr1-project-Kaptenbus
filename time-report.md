@@ -64,3 +64,9 @@ For example:
   - *Adding cost arrays (cost & cost1) and adding them to the pizza and drink functions (to .push the item price in them)*
   - *Added a loop which work as a total cost of the items the user pick (in the Shopping cart)*
   - *Added so when the user wants to remove an item it also remove the cost of that item (took a while to figure that out)*
+
+- 2022-04-24 17:00 Worked for 2 hours
+  - *Adding cost to pasta function also added so that the cost array was empty when the order is complete*
+  - *Deleted 24 rows of code that i found to be unnecessary including secound arrays for cost and cart (did plenty of testing before i made the decision)*
+  - *Made another function that was already in the shoppingCart function and changeOrder function as an result of only having one cart/cost array*
+  - *Worked out an issue with the variable listCart storing the older "list" made it show double input*
