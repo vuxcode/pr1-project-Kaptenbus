@@ -17,3 +17,5 @@
 7. Made "Change order" button hidden when the user does not use it, had issues with the .addEventListner not working with 
 .getElementById("changeButton").style.visibility so the function wouldent work
 - Solution, as i updated the variable to shown i also needed to update it again to "normal form" .getElementById("changeButton");
+8. Made a new function and a variable, the variable "listCart" would store the old input in the variable so when the new one added it showed double of the menu items in Shopping cart.
+- Solution, updated the listCart variable each time to an empty string while accessing changeOrder and shoppingCart function.
