@@ -30,6 +30,9 @@
     //array for shoppingCart function stores the users input (choices from the menus)
     var cart = [];
 
+    //
+    var listCart = "";
+
     //Binding the button to the variable "button1"
     var button1 = document.getElementById("pizzaButton");
     
@@ -42,7 +45,18 @@
         //gives the user the output "End of menu!"
         alert("End of menu!");
     };
-    
+
+    //Function to make the users input in to an list. (the items the user picks from all the menus)
+    function orderList()
+    {
+        //a loop to show each item from the cart array
+        for (var index = 0; index < cart.length; index++)
+        {
+            //listCart += the cart[index] starting from the first item [0] + a newline
+            listCart += cart[index] + "\n";
+        }
+    }        
+
     //Function for the "Pizza menu" button
     function pizza()
     {
@@ -134,15 +148,8 @@
     //Function for the "Shopping cart" button.
     function shoppingCart()
     {
-        //new variable
-        var listCart = "";
-
-        //a loop to show each item from the cart array
-        for (var index = 0; index < cart.length; index++)
-        {
-            //listCart += the cart[index] starting from the first item [0] + a newline
-            listCart += cart[index] + "\n";
-        }
+        //
+        orderList();
 
         //new variable
         var total = 0;
@@ -174,6 +181,8 @@
                 
                 //making the button clickable and binding it to changeOrder function.
                 button5.addEventListener("click", changeOrder);
+
+                listCart = "";
             }
 
             //if user don't want to change order
@@ -184,6 +193,8 @@
 
                 //Emptying the cost array
                 cost = [];
+
+                listCart = "";
             }
         }
 
