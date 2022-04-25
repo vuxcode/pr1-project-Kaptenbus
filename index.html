@@ -28,13 +28,13 @@
     var cost = [];
     
     //store the new prices when user removes an item
-    var cost1 = [];
+    //var cost1 = [];
     
-    //array for shoppingCart function stores the users input
+    //array for shoppingCart function stores the users input (choices from the menus)
     var cart = [];
     
-    //cart for changeOrder function
-    var cart1 = [];
+    //cart for changeOrder function used to
+    //var cart1 = [];
 
     //Binding the button to the variable "button1"
     var button1 = document.getElementById("pizzaButton");
@@ -182,23 +182,26 @@
                 button5.addEventListener("click", changeOrder);
                 
                 //"send" the shopping cart's cart to change order cart
-                cart1 = cart
+                //cart1 = cart
 
                 //emptying the shopping cart
-                cart = [];
+                //cart = [];
 
                 //"send" the cost array to the cost cart in changeOrder function
-                cost1 = cost
+                //cost1 = cost
 
                 //emptying the cost array
-                cost = [];
+                //cost = [];
             }
 
             //if user don't want to change order
             else
             {
-                //Emptying the shopping cart
+                //Emptying the cart array
                 cart = [];
+
+                //Emptying the cost array
+                cost = [];
             }
         }
 
@@ -212,7 +215,7 @@
             cart = [];
 
             //Emptying the changeOrder cart
-            cart1 = [];
+            //cart1 = [];
         };
     };
 
@@ -226,10 +229,10 @@
         var listCart1 = "";
 
         //a loop to show each item from the cart array
-        for (var index = 0; index < cart1.length; index++)
+        for (var index = 0; index < cart.length; index++)
         {
             //listCart1 += the cart1[index] starting from the first item [0] + a newline
-            listCart1 += cart1[index] + "\n";
+            listCart1 += cart[index] + "\n";
         }
         //Output for the user
         var order = prompt("Write which item you want to remove."+ "\n" + "Write 'DONE' when the order is complete." + "\n" + listCart1);
@@ -244,25 +247,25 @@
             order = order.charAt(0).toUpperCase() + order.slice(1);
 
             //if the user input an item that he/she have in the cart
-            if (cart1.includes(order))
+            if (cart.includes(order))
             {
                 //var start will have the index of the users input of the prompt
-                var start = cart1.indexOf(order);
+                var start = cart.indexOf(order);
 
                 var deleteindex = 1;
                 
                 //Removes the users input
-                var remove = cart1.splice(start, deleteindex);
+                var remove = cart.splice(start, deleteindex);
 
                 //removes the RIGHT price
-                var removeCost = cost1.splice(start, deleteindex);
+                var removeCost = cost.splice(start, deleteindex);
 
                 //show excisting cart 
-                console.log(cart1);
+                console.log(cart);
                 //show item removed
                 console.log(remove);
                 //show excisting cost
-                console.log(cost1)
+                console.log(cost)
                 //show which price removed
                 console.log(removeCost);
             }
@@ -273,16 +276,16 @@
                 button5 = document.getElementById("changeButton").style.visibility = 'hidden';
 
                 //store the "Change order" cart into the "Shopping cart" cart
-                cart = cart1
+                //cart = cart1
 
                 //Emptying the "Change order" cart
-                cart1 = [];
+                //cart1 = [];
             }
             //any spelling errors or numbers in the users input
             else
             {
                 //output for the user
-                alert("Maybe your spelling was incorrect, no numbers are allowed");
+                alert("Maybe your spelling was incorrect, no numbers are allowed.");
             }
         }
     }
