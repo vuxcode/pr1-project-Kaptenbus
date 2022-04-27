@@ -70,3 +70,9 @@ For example:
   - *Deleted 24 rows of code that i found to be unnecessary including secound arrays for cost and cart (did plenty of testing before i made the decision)*
   - *Made another function that was already in the shoppingCart function and changeOrder function as an result of only having one cart/cost array*
   - *Worked out an issue with the variable listCart storing the older "list" made it show double input*
+
+- 2022-04-24 16:00 Worked for 2 hours
+  - *Added comments and some minor changes (moving some code, changed some strings that was outputed to the user)*
+  - *Added so the user can only see the Shopping Cart when they have added something to it*
+  - *Made a new function that change Shopping Cart button and Change Order button to show/hide (did this after i made the change to shoppingCart)*
+  
