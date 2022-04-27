@@ -1,7 +1,8 @@
-<!-- Making the text and buttons display in the "center"-->
-<center>
-<!-- Dark theme -->
+<!--Dark theme-->
 <meta name="color-scheme" content="dark">
+
+<!--Making the text and buttons display in the "center"-->
+<center>
 
 <!--Output bigger text-->
 <h1>Welcome to Tony's!</h1>
@@ -9,7 +10,7 @@
 <!--Output smaller text-->
 <p>Click any of the buttons to pick from different menus.</p>
 
-<!-- Buttons -->
+<!--Buttons-->
 <button id="pizzaButton">Pizza menu</button>
 <button id="pastaButton">Pasta menu</button>
 <button id="drinkButton">Drink list</button>
@@ -17,12 +18,14 @@
 <button id="changeButton">Change order</button>
 
 </center>
+
+<!--Start of the programs code-->
 <script>
 
-    //arrays for the functions
-    var pizzaMenu = ["Calzone", "Kebbab", "Margherita", "Capricosa", "Hawaiian",];
-    var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli",];
-    var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water",];
+    //arrays for the different functions menu
+    var pizzaMenu = ["Calzone", "Kebbab", "Margherita", "Capricosa", "Hawaiian"];
+    var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli"];
+    var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water"];
     
     //array to store the users picked item prices
     var cost = [];
@@ -32,19 +35,6 @@
 
     //
     var listCart = "";
-
-    //Binding the button to the variable "button1"
-    var button1 = document.getElementById("pizzaButton");
-    
-    //Binding the function to the variable "button1"
-    button1.addEventListener("click", pizza);
-
-    //Function so that the user get an alert that it is the end of the menu
-    function endMenu()
-    {
-        //gives the user the output "End of menu!"
-        alert("End of menu!");
-    };
 
     //Function to make the users input in to an list. (the items the user picks from all the menus)
     function orderList()
@@ -56,6 +46,20 @@
             listCart += cart[index] + "\n";
         }
     }        
+    
+    //Function so that the user get an alert that it is the end of the menu
+    function endMenu()
+    {
+        //gives the user the output "End of menu!"
+        alert("End of menu!");
+    };
+
+
+    //Binding the button to the variable "button1"
+    var button1 = document.getElementById("pizzaButton");
+    
+    //Binding the function to the variable "button1"
+    button1.addEventListener("click", pizza);
 
     //Function for the "Pizza menu" button
     function pizza()
