@@ -132,6 +132,15 @@
             //user picks a drink which will
             if (c == true)
             {
+
+                //if user want to change the order the "Change order" button is visible
+                button5 = document.getElementById("cartButton").style.visibility = "visible";
+
+                //Updating the variable (if i not i would get an error with the add.EventListener)
+                button5 = document.getElementById("cartButton")
+
+                //making the button clickable and binding it to changeOrder function.
+                button5.addEventListener("click", shoppingCart);
                 //Store the drink choice
                 cart.push(drinkMenu[index]);
 
@@ -144,10 +153,10 @@
     };
 
     //Binding the forth button to variable
-    var button4 = document.getElementById("cartButton");
+    var button4 = document.getElementById("cartButton").style.visibility = "hidden";
 
     //Binding the shoppingCart function to button4
-    button4.addEventListener("click", shoppingCart);
+    //button4.addEventListener("click", shoppingCart);
 
     //Function for the "Shopping cart" button.
     function shoppingCart()
@@ -158,7 +167,7 @@
         //function which makes the users picked items in to an list.
         orderList();
 
-        //new variable
+        //new variable that store the total cost of the user picked items
         var total = 0;
 
         //loop for the cost array
@@ -216,7 +225,7 @@
     };
 
     //making a varialbe for the Change order button and hides it, rest of button code is in the shoppingCart();
-    var button5 = document.getElementById("changeButton").style.visibility = 'hidden';
+    var button5 = document.getElementById("changeButton").style.visibility = "hidden";
 
     //so the user can change their order
     function changeOrder()
