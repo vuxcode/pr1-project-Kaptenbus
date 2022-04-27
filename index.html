@@ -33,7 +33,7 @@
     //array for shoppingCart function stores the users input (choices from the menus)
     var cart = [];
 
-    //
+    //stores the users picked items from the menus is used with the orderList function
     var listCart = "";
 
     //Function to make the users input in to an list. (the items the user picks from all the menus)
@@ -46,7 +46,7 @@
             listCart += cart[index] + "\n";
         }
     }        
-    
+
     //Function so that the user get an alert that it is the end of the menu
     function endMenu()
     {
@@ -152,8 +152,10 @@
     //Function for the "Shopping cart" button.
     function shoppingCart()
     {
+        //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
         listCart = "";
-        //
+        
+        //function which makes the users picked items in to an list.
         orderList();
 
         //new variable
@@ -167,7 +169,7 @@
         }
 
         //Output for the user to see the order and accept/decline order.
-        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + listCart + total);
+        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + "\n" + listCart + "\n" + "Total cost is " + total + ":-");
 
         //if the user declines the order
         if (a == false)
@@ -219,13 +221,14 @@
     //so the user can change their order
     function changeOrder()
     {
-        //
+        //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
         listCart = "";
-        //
+        
+        //function which makes the users picked items in to an list.
         orderList();
 
         //Output for the user
-        var order = prompt("Write which item you want to remove."+ "\n" + "Write 'DONE' when the order is complete." + "\n" + listCart);
+        var order = prompt("Write which item you want to remove."+ "\n" + "Write 'DONE' when the order is complete." + "\n" + "\n" + listCart);
         
         //Fixing an error i had with pressing cancel on the prompt
         if (order)
