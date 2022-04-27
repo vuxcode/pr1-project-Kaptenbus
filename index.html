@@ -54,6 +54,46 @@
         alert("End of menu!");
     };
 
+    //
+    function Button(input1)
+    {
+        if (input1 == "showCart")
+        {
+            //if user want to change the order the "Change order" button is visible
+            button4 = document.getElementById("cartButton").style.visibility = 'visible';
+
+            //Updating the variable (if i not i would get an error with the add.EventListener)
+            button4 = document.getElementById("cartButton")
+
+            //making the button clickable and binding it to changeOrder function.
+            button4.addEventListener("click", shoppingCart);
+
+        }
+
+        else if (input1 == "showChangeOrder")
+        {
+            //if user want to change the order the "Change order" button is visible
+            button5 = document.getElementById("changeButton").style.visibility = 'visible';
+
+            //Updating the variable (if i not i would get an error with the add.EventListener)
+            button5 = document.getElementById("changeButton")
+
+            //making the button clickable and binding it to changeOrder function.
+            button5.addEventListener("click", changeOrder);
+        }
+        
+        else if (input1 == "hideCart")
+        {
+            //
+            button4 = document.getElementById("cartButton").style.visibility = "hidden";
+        }
+        
+        else if (input1 == "hideChangeOrder")
+        {
+            //
+            button5 = document.getElementById("changeButton").style.visibility = 'hidden';
+        }
+    }
 
     //Binding the button to the variable "button1"
     var button1 = document.getElementById("pizzaButton");
@@ -132,15 +172,9 @@
             //user picks a drink which will
             if (c == true)
             {
+                //
+                Button("showCart");
 
-                //if user want to change the order the "Change order" button is visible
-                button5 = document.getElementById("cartButton").style.visibility = "visible";
-
-                //Updating the variable (if i not i would get an error with the add.EventListener)
-                button5 = document.getElementById("cartButton")
-
-                //making the button clickable and binding it to changeOrder function.
-                button5.addEventListener("click", shoppingCart);
                 //Store the drink choice
                 cart.push(drinkMenu[index]);
 
@@ -155,12 +189,12 @@
     //Binding the forth button to variable
     var button4 = document.getElementById("cartButton").style.visibility = "hidden";
 
-    //Binding the shoppingCart function to button4
-    //button4.addEventListener("click", shoppingCart);
-
     //Function for the "Shopping cart" button.
     function shoppingCart()
     {
+        //
+        Button("hideChangeOrder");
+
         //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
         listCart = "";
         
@@ -189,20 +223,15 @@
             //if the user decide to change the order
             if (declineOrder == true)
             {
-                showButton(1);
-                //if user want to change the order the "Change order" button is visible
-                //button5 = document.getElementById("changeButton").style.visibility = 'visible';
-
-                //Updating the variable (if i not i would get an error with the add.EventListener)
-                //button5 = document.getElementById("changeButton")
-                
-                //making the button clickable and binding it to changeOrder function.
-                //button5.addEventListener("click", changeOrder);
+                Button("showChangeOrder");
             }
 
             //if user don't want to change order
             else
             {
+                //
+                Button("hideCart");
+                
                 //Emptying the cart array
                 cart = [];
 
@@ -217,6 +246,9 @@
             //Output for the user after accepting the order
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
+            //
+            Button("hideCart");
+                
             //Emptying the cart array
             cart = [];
 
@@ -238,7 +270,7 @@
         orderList();
 
         //Output for the user
-        var order = prompt("Write which item you want to remove."+ "\n" + "Write 'DONE' when the order is complete." + "\n" + "\n" + listCart);
+        var order = prompt("Write which item you want to remove." + "\n" + listCart);
         
         //Fixing an error i had with pressing cancel on the prompt
         if (order)
@@ -272,12 +304,7 @@
                 //show which price removed
                 console.log(removeCost);
             }
-            //if the user is done with the changes in the order
-            else if (order == "Done")
-            {
-                //when the user is done with changing the order it hides the Change order button
-                button5 = document.getElementById("changeButton").style.visibility = 'hidden';
-            }
+
             //any spelling errors or numbers in the users input
             else
             {
@@ -286,21 +313,5 @@
             } 
         }
     }
-
-function showButton(input1)
-{
-
-    if (input1 == 1)
-    {
-        //if user want to change the order the "Change order" button is visible
-        button5 = document.getElementById("changeButton").style.visibility = 'visible';
-
-        //Updating the variable (if i not i would get an error with the add.EventListener)
-        button5 = document.getElementById("changeButton")
-
-        //making the button clickable and binding it to changeOrder function.
-        button5.addEventListener("click", changeOrder);
-    }
-
-}
+    
 </script>
