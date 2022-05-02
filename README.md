@@ -56,7 +56,7 @@ Note to self: Add pricing to pasta function and complete the shopping cart
 Make a function that "emptying" the arrays. Maybe make the changeOrder button always visible again? Uppdate the comments. (deleted the secound arrays so need for an function anymore)
 
 27/04-22
-Add comments to the new function, move the Shopping Cart and Change order button. Rename Change order since it's only removes items.
+Add comments to the new function, move the Shopping Cart and Change order button.
 
 
 # Project Summary
