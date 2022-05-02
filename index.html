@@ -11,17 +11,35 @@
 <p>Click any of the buttons to pick from different menus.</p>
 
 <!--Buttons-->
-<button id="pizzaButton">Pizza menu</button>
-<button id="pastaButton">Pasta menu</button>
-<button id="drinkButton">Drink list</button>
-<button id="cartButton">Shopping cart</button>
-<button id="changeButton">Change order</button>
+<button id="pizza">Pizza menu</button>
+<button id="pasta">Pasta menu</button>
+<button id="drink">Drink list</button>
+<button id="cart">Shopping cart</button>
+<button id="change">Change order</button>
 
 </center>
 
-<!--Start of the programs code-->
+<!--Start of the javascript code-->
 <script>
+    
+    //Binding the button to the variable "button1-5"
+    var button1 = document.getElementById("pizza");
+    var button2 = document.getElementById("pasta");
+    var button3 = document.getElementById("drink");
+    var button4 = document.getElementById("cart");
+    var button5 = document.getElementById("change");
+    
+    //Binding the function to the variable "button1-5" and making it clickable
+    button1.addEventListener("click", pizza);
+    button2.addEventListener("click", pasta);
+    button3.addEventListener("click", drink);
+    button4.addEventListener("click", shoppingCart);
+    button5.addEventListener("click", changeOrder);
 
+    //Shopping cart and Change order disabled from start.
+    buttonDisable(button4);
+    buttonDisable(button5);
+    
     //arrays for the different functions menu
     var pizzaMenu = ["Calzone", "Kebbab", "Margherita", "Capricosa", "Hawaiian"];
     var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli"];
@@ -54,23 +72,46 @@
         alert("End of menu!");
     };
 
-    //
+    //function for disable any button
     function buttonDisable(button)
     {
+        //Disables button which is inputed in the "parameter" (button)
         button.disabled = true;
     }
 
-    //
+    //Function for enable any button
     function buttonEnable(button)
     {
+        //Enables button which is inputed in the "parameter" (button)
         button.disabled = false;
     }
 
-    //Binding the button to the variable "button1"
-    var button1 = document.getElementById("pizzaButton");
-    
-    //Binding the function to the variable "button1"
-    button1.addEventListener("click", pizza);
+    //function for all the different menus (in progress)
+    function allMenu(menu)
+    {
+        //
+        for (var index = 0; index < menu.length; index++)
+        {
+            //
+            var a = confirm(menu[index]);
+
+            //
+            if (a == true)
+            {
+                //Enables the Shopping cart button
+                buttonEnable(button4);
+
+                //
+                cart.push(menu[index]);
+
+            }
+
+        }
+        //tells the user the menu has ended
+        endMenu();
+        //show the cart when testing the function in console with different menus
+        console.log(cart);
+    }
 
     //Function for the "Pizza menu" button
     function pizza()
@@ -84,7 +125,7 @@
             //when the user pick a pizza
             if (a == true)
             {
-                //
+                //Enables the Shopping cart button
                 buttonEnable(button4);
 
                 //sending the picked pizza to the cart array
@@ -98,13 +139,7 @@
     //tells the user the menu has ended
     endMenu();
     };
-    
-    //Binding the secound button to var button2
-    var button2 = document.getElementById("pastaButton");
 
-    //Binding the pasta function clickable button2 (pasta button)
-    button2.addEventListener("click", pasta);
-    
     //pasta menu function
     function pasta()
     {
@@ -117,7 +152,7 @@
             //user picks pasta which will
             if (b == true)
             {
-                //
+                //Enables the Shopping cart button
                 buttonEnable(button4);
 
                 //store the pasta choice to the order array + the price
@@ -130,12 +165,6 @@
     //tells the user the menu has ended
     endMenu();
     };
-    
-    //Binding the third button to the variable
-    var button3 = document.getElementById("drinkButton");
-
-    //Binding the drink function to button3 
-    button3.addEventListener("click", drink);
 
     //drink list function
     function drink()
@@ -149,7 +178,7 @@
             //user picks a drink which will
             if (c == true)
             {
-                //
+                //Enables the Shopping cart button
                 buttonEnable(button4);
 
                 //Store the drink choice
@@ -162,14 +191,6 @@
      //tell the user that the menu has ended
      endMenu();    
     };
-
-    //Binding the forth button to variable
-    var button4 = document.getElementById("cartButton")
-
-    //Binding the shoppingCart function to the clickable button4
-    button4.addEventListener("click", shoppingCart);
-
-    buttonDisable(button4);
 
     //Function for the "Shopping cart" button.
     function shoppingCart()
@@ -202,14 +223,14 @@
             //if the user decide to change the order
             if (declineOrder == true)
             {
-                //
+                //Enables the Change order button
                 buttonEnable(button5);
             }
 
             //if user don't want to change order
             else
             {
-                //
+                //Disables the Shopping cart and Change order buttons
                 buttonDisable(button4);
                 buttonDisable(button5);
                 
@@ -227,7 +248,7 @@
             //Output for the user after accepting the order
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
-            //
+            //Disables the Shopping cart and Change order buttons
             buttonDisable(button4);
             buttonDisable(button5);
                 
@@ -238,14 +259,6 @@
             cost = [];
         };
     };
-
-    //making a varialbe for the Change order button
-    var button5 = document.getElementById("changeButton")
-
-    //Binding the changeOrder function clickable button5 (pasta button)
-    button5.addEventListener("click", changeOrder);
-
-    buttonDisable(button5);
 
     //so the user can change their order
     function changeOrder()
