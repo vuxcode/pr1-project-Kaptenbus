@@ -76,3 +76,7 @@ For example:
   - *Added so the user can only see the Shopping Cart when they have added something to it*
   - *Made a new function that change Shopping Cart button and Change Order button to show/hide (did this after i made the change to shoppingCart)*
   
+- 2022-05-02 16:00 Worked for 2 hours
+  - *Added 2 functions that disable shopping cart and change order buttons, took a while to figure out how i wanted it to be (was trying to make only one function, did not work out but will think on it so maybe not done yet)*
+  - *Added a bunch of comments and moved all the code for my buttons since it is easier to work with them if they are at the same place and i don't have to scroll*
+  - *Added the base of the new menu function, testing it and it worked as i wanted (tested it in console for now)*
