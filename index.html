@@ -55,44 +55,15 @@
     };
 
     //
-    function Button(input1)
+    function buttonDisable(button)
     {
-        if (input1 == "showCart")
-        {
-            //if user want to change the order the "Change order" button is visible
-            button4 = document.getElementById("cartButton").style.visibility = 'visible';
+        button.disabled = true;
+    }
 
-            //Updating the variable (if i not i would get an error with the add.EventListener)
-            button4 = document.getElementById("cartButton")
-
-            //making the button clickable and binding it to changeOrder function.
-            button4.addEventListener("click", shoppingCart);
-
-        }
-
-        else if (input1 == "showChangeOrder")
-        {
-            //if user want to change the order the "Change order" button is visible
-            button5 = document.getElementById("changeButton").style.visibility = 'visible';
-
-            //Updating the variable (if i not i would get an error with the add.EventListener)
-            button5 = document.getElementById("changeButton")
-
-            //making the button clickable and binding it to changeOrder function.
-            button5.addEventListener("click", changeOrder);
-        }
-        
-        else if (input1 == "hideCart")
-        {
-            //
-            button4 = document.getElementById("cartButton").style.visibility = "hidden";
-        }
-        
-        else if (input1 == "hideChangeOrder")
-        {
-            //
-            button5 = document.getElementById("changeButton").style.visibility = 'hidden';
-        }
+    //
+    function buttonEnable(button)
+    {
+        button.disabled = false;
     }
 
     //Binding the button to the variable "button1"
@@ -113,6 +84,9 @@
             //when the user pick a pizza
             if (a == true)
             {
+                //
+                buttonEnable(button4);
+
                 //sending the picked pizza to the cart array
                 cart.push(pizzaMenu[index]);
 
@@ -143,6 +117,9 @@
             //user picks pasta which will
             if (b == true)
             {
+                //
+                buttonEnable(button4);
+
                 //store the pasta choice to the order array + the price
                 cart.push(pastaMenu[index]);
                 
@@ -173,7 +150,7 @@
             if (c == true)
             {
                 //
-                Button("showCart");
+                buttonEnable(button4);
 
                 //Store the drink choice
                 cart.push(drinkMenu[index]);
@@ -187,14 +164,16 @@
     };
 
     //Binding the forth button to variable
-    var button4 = document.getElementById("cartButton").style.visibility = "hidden";
+    var button4 = document.getElementById("cartButton")
+
+    //Binding the shoppingCart function to the clickable button4
+    button4.addEventListener("click", shoppingCart);
+
+    buttonDisable(button4);
 
     //Function for the "Shopping cart" button.
     function shoppingCart()
     {
-        //
-        Button("hideChangeOrder");
-
         //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
         listCart = "";
         
@@ -223,14 +202,16 @@
             //if the user decide to change the order
             if (declineOrder == true)
             {
-                Button("showChangeOrder");
+                //
+                buttonEnable(button5);
             }
 
             //if user don't want to change order
             else
             {
                 //
-                Button("hideCart");
+                buttonDisable(button4);
+                buttonDisable(button5);
                 
                 //Emptying the cart array
                 cart = [];
@@ -247,7 +228,8 @@
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
             //
-            Button("hideCart");
+            buttonDisable(button4);
+            buttonDisable(button5);
                 
             //Emptying the cart array
             cart = [];
@@ -257,8 +239,13 @@
         };
     };
 
-    //making a varialbe for the Change order button and hides it, rest of button code is in the shoppingCart();
-    var button5 = document.getElementById("changeButton").style.visibility = "hidden";
+    //making a varialbe for the Change order button
+    var button5 = document.getElementById("changeButton")
+
+    //Binding the changeOrder function clickable button5 (pasta button)
+    button5.addEventListener("click", changeOrder);
+
+    buttonDisable(button5);
 
     //so the user can change their order
     function changeOrder()
