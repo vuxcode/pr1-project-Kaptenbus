@@ -11,9 +11,9 @@
 <p>Click any of the buttons to pick from different menus.</p>
 
 <!--Buttons-->
-<button type="button" onclick="test(1)">Pizza menu</button>
-<button id="pasta">Pasta menu</button>
-<button id="drink">Drink list</button>
+<button onclick="chooseMenu(1)">Pizza menu</button>
+<button onclick="chooseMenu(2)">Pasta menu</button>
+<button onclick="chooseMenu(3)">Drink menu</button>
 <button id="cart">Shopping cart</button>
 <button id="change">Change order</button>
 
@@ -23,16 +23,10 @@
 <script>
     
     //Binding the button to the variable "button1-5"
-    //var button1 = document.getElementById("pizza");
-    var button2 = document.getElementById("pasta");
-    var button3 = document.getElementById("drink");
     var button4 = document.getElementById("cart");
     var button5 = document.getElementById("change");
     
     //Binding the function to the variable "button1-5" and making it clickable
-    //button1.addEventListener("click", pizza);
-    button2.addEventListener("click", pasta);
-    button3.addEventListener("click", drink);
     button4.addEventListener("click", shoppingCart);
     button5.addEventListener("click", changeOrder);
 
@@ -72,12 +66,28 @@
         alert("End of menu!");
     };
 
-    //
-    function test(button)
+    //Function which put the right menu for the right pressed button
+    function chooseMenu(button)
     {
+        //If the user press Pizza menu button
         if (button == 1)
         {
+            //Runs the allMenu function with the pizzaMenu array
             allMenu(pizzaMenu);
+        }
+
+        //If the user press Pasta menu button
+        else if (button == 2)
+        {
+            //Runs the allMenu function with the pastaMenu array
+            allMenu(pastaMenu);
+        }
+        
+        ////If the user press Drink menu button
+        else
+        {
+            //Runs the allMenu function with the drinkMenu array
+            allMenu(drinkMenu);
         }
     }
     
@@ -98,23 +108,21 @@
     //function for all the different menus (in progress)
     function allMenu(menu)
     {
-        //
+        //A loop for all the different menus
         for (var index = 0; index < menu.length; index++)
         {
-            //
+            //Output for the user too choose which item they want
             var a = confirm(menu[index]);
 
-            //
+            //If the user picks an item
             if (a == true)
             {
                 //Enables the Shopping cart button
                 buttonEnable(button4);
 
-                //
+                //Pushing the item to the cart array
                 cart.push(menu[index]);
-
             }
-
         }
         //tells the user the menu has ended
         endMenu();
