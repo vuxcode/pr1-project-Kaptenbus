@@ -36,8 +36,8 @@
     
     //arrays for the different functions menu
     var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70], ["Hawaiian", 70]];
-    var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli"];
-    var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water"];
+    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
+    var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
     
     //array to store the users picked item prices
     var cost = [];
@@ -57,14 +57,21 @@
             //listCart += the cart[index] starting from the first item [0] + a newline
             listCart += cart[index] + "\n";
         }
-    }        
+    }
 
-    //Function so that the user get an alert that it is the end of the menu
-    function endMenu()
+    //function for disable any button
+    function buttonDisable(button)
     {
-        //gives the user the output "End of menu!"
-        alert("End of menu!");
-    };
+        //Disables button which is inputed in the "parameter" (button)
+        button.disabled = true;
+    }
+
+    //Function for enable any button
+    function buttonEnable(button)
+    {
+        //Enables button which is inputed in the "parameter" (button)
+        button.disabled = false;
+    }
 
     //Function which put the right menu for the right pressed button
     function chooseMenu(button)
@@ -91,20 +98,6 @@
         }
     }
     
-    //function for disable any button
-    function buttonDisable(button)
-    {
-        //Disables button which is inputed in the "parameter" (button)
-        button.disabled = true;
-    }
-
-    //Function for enable any button
-    function buttonEnable(button)
-    {
-        //Enables button which is inputed in the "parameter" (button)
-        button.disabled = false;
-    }
-
     //function for all the different menus (in progress)
     function allMenu(menu)
     {
@@ -112,10 +105,10 @@
         for (var index = 0; index < menu.length; index++)
         {
             //Output for the user too choose which item they want
-            var a = confirm(menu[index]);
+            var output = confirm(menu[index][0] + " " + menu[index][1] + ":-");
 
             //If the user picks an item
-            if (a == true)
+            if (output == true)
             {
                 //Enables the Shopping cart button
                 buttonEnable(button4);
@@ -125,8 +118,8 @@
                 cost.push(menu[index][1]);
             }
         }
-        //tells the user the menu has ended
-        endMenu();
+        //gives the user the output "End of menu!"
+        alert("End of menu!");
     }
 
     //Function for the "Shopping cart" button.
