@@ -22,11 +22,11 @@
 <!--Start of the javascript code-->
 <script>
     
-    //Binding the button to the variable "button1-5"
+    //Binding the button to the variable "button4-5"
     var button4 = document.getElementById("cart");
     var button5 = document.getElementById("change");
     
-    //Binding the function to the variable "button1-5" and making it clickable
+    //Binding the function to the variable "button4-5" and making it clickable
     button4.addEventListener("click", shoppingCart);
     button5.addEventListener("click", changeOrder);
 
@@ -35,7 +35,7 @@
     buttonDisable(button5);
     
     //arrays for the different functions menu
-    var pizzaMenu = ["Calzone", "Kebbab", "Margherita", "Capricosa", "Hawaiian"];
+    var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70], ["Hawaiian", 70]];
     var pastaMenu = ["Bolognese", "Carbonara", "Lasagne", "Ravioli"];
     var drinkMenu = ["Pepsi", "Fanta", "Sprite", "Water"];
     
@@ -120,94 +120,14 @@
                 //Enables the Shopping cart button
                 buttonEnable(button4);
 
-                //Pushing the item to the cart array
-                cart.push(menu[index]);
+                //Pushing the item to the cart/cost array
+                cart.push(menu[index][0]);
+                cost.push(menu[index][1]);
             }
         }
         //tells the user the menu has ended
         endMenu();
-        //show the cart when testing the function in console with different menus
-        console.log(cart);
     }
-
-    //Function for the "Pizza menu" button
-    function pizza()
-    {
-        //Making a loop for the pizzaMenu array
-        for (var index = 0; index < pizzaMenu.length; index++)
-        {
-            //Output for the user too choose which pizza they want + the price
-            var a = confirm(pizzaMenu[index] + " " + 70 + ":-");
-
-            //when the user pick a pizza
-            if (a == true)
-            {
-                //Enables the Shopping cart button
-                buttonEnable(button4);
-
-                //sending the picked pizza to the cart array
-                cart.push(pizzaMenu[index]);
-
-                //every time user picks a pizza it adds the price in the cost array
-                cost.push(70);
-            }
-
-        }
-    //tells the user the menu has ended
-    endMenu();
-    };
-
-    //pasta menu function
-    function pasta()
-    {
-        //Loop for the pastaMenu array, since i am creating a function i can use the same name on variable
-        for (var index = 0; index < pastaMenu.length; index++)
-        {
-            //Output for he user too choose from which pasta they want
-            var b = confirm(pastaMenu[index] + " " + 80 + ":-");
-
-            //user picks pasta which will
-            if (b == true)
-            {
-                //Enables the Shopping cart button
-                buttonEnable(button4);
-
-                //store the pasta choice to the order array + the price
-                cart.push(pastaMenu[index]);
-                
-                //every time user picks a pasta it adds the price in the cost array
-                cost.push(80);
-            }
-        }
-    //tells the user the menu has ended
-    endMenu();
-    };
-
-    //drink list function
-    function drink()
-    {
-        //Loop for the drinkMenu array
-        for (var index = 0; index < drinkMenu.length; index++)
-        {
-            //Output for the user to choose which drink they want + the price
-            var c = confirm(drinkMenu[index] + " " + 10 + ":-");
-
-            //user picks a drink which will
-            if (c == true)
-            {
-                //Enables the Shopping cart button
-                buttonEnable(button4);
-
-                //Store the drink choice
-                cart.push(drinkMenu[index]);
-
-                //every time user picks a drink it adds the price in the cost array
-                cost.push(10);
-            }
-        }
-     //tell the user that the menu has ended
-     endMenu();    
-    };
 
     //Function for the "Shopping cart" button.
     function shoppingCart()
