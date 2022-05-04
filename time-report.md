@@ -80,3 +80,10 @@ For example:
   - *Added 2 functions that disable shopping cart and change order buttons, took a while to figure out how i wanted it to be (was trying to make only one function, did not work out but will think on it so maybe not done yet)*
   - *Added a bunch of comments and moved all the code for my buttons since it is easier to work with them if they are at the same place and i don't have to scroll*
   - *Added the base of the new menu function, testing it and it worked as i wanted (tested it in console for now)*
+
+- 2022-05-02 13:00 Worked for 2 hours
+  - *Alot of time went in to making the button change the menu function to the "right" menu array which resultet in read below*
+  - *Forced to change my coding for the buttons to html since the addEventListener did not accept function parameters for example "addEventListener("click", allMenu(parameter));"*
+  - *Added more arrays to the menu arrays which act as pricing*
+  - *Added so the menu function now act as before (pushing item and price to their arrays)*
+  - *Deleted old menu functions which made my endMenu function "useless" so deleted it aswell and implemented it into the allMenu function*
