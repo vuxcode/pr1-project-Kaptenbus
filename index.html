@@ -11,7 +11,7 @@
 <p>Click any of the buttons to pick from different menus.</p>
 
 <!--Buttons-->
-<button id="pizza">Pizza menu</button>
+<button type="button" onclick="test(1)">Pizza menu</button>
 <button id="pasta">Pasta menu</button>
 <button id="drink">Drink list</button>
 <button id="cart">Shopping cart</button>
@@ -23,14 +23,14 @@
 <script>
     
     //Binding the button to the variable "button1-5"
-    var button1 = document.getElementById("pizza");
+    //var button1 = document.getElementById("pizza");
     var button2 = document.getElementById("pasta");
     var button3 = document.getElementById("drink");
     var button4 = document.getElementById("cart");
     var button5 = document.getElementById("change");
     
     //Binding the function to the variable "button1-5" and making it clickable
-    button1.addEventListener("click", pizza);
+    //button1.addEventListener("click", pizza);
     button2.addEventListener("click", pasta);
     button3.addEventListener("click", drink);
     button4.addEventListener("click", shoppingCart);
@@ -72,6 +72,15 @@
         alert("End of menu!");
     };
 
+    //
+    function test(button)
+    {
+        if (button == 1)
+        {
+            allMenu(pizzaMenu);
+        }
+    }
+    
     //function for disable any button
     function buttonDisable(button)
     {
