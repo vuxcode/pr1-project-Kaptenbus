@@ -22,13 +22,42 @@
 <!--Start of the javascript code-->
 <script>
 
-var text = document.getElementById("test");
-        text.innerHTML = "Welcome to Tony's!";
+    var text = document.getElementById("test");
+    text.innerHTML = "Welcome to Tony's!";
 
 
-    function test2()
+    function test2(test, test2)
     {
-        cart.push("hello");
+    
+        if (test == 1)
+        {
+            cart.push(test2[0][0])
+            cost.push(test2[0][1])
+            console.log(cart);
+            console.log(cost);
+        }
+        else if (test == 2)
+        {
+            cart.push(test2[1][0])
+            cost.push(test2[1][1])
+            console.log(cart);
+            console.log(cost);
+        }
+        else if (test == 3)
+        {
+            cart.push(test2[2][0])
+            cost.push(test2[2][1])
+            console.log(cart);
+            console.log(cost);
+        }
+        else
+        {
+            cart.push(test2[3][0])
+            cost.push(test2[3][1])
+            console.log(cart);
+            console.log(cost);
+        }
+
     }
 
     //Binding the button to the variable "button4-5"
@@ -44,9 +73,17 @@ var text = document.getElementById("test");
     buttonDisable(button5);
     
     //arrays for the different functions menu
-    var pizzaMenu = [["Calzone", 70, "<button onclick='test2()'>Add</button>"], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70], ["Hawaiian", 70]];
-    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
+    var pizzaMenu = 
+    [["Calzone", 70, "<button onclick='test2(1, pizzaMenu)'>Add</button>"], 
+    ["Kebbab", 80, "<button onclick='test2(2, pizzaMenu)'>Add</button>"], 
+    ["Margherita", 70, "<button onclick='test2(3, pizzaMenu)'>Add</button>"], 
+    ["Capricosa", 70, "<button onclick='test2(4, pizzaMenu)'>Add</button>"]];
+    //["Hawaiian", 70]];
+    var pastaMenu = 
+    [["Bolognese", 70, "<button onclick='test2(1, pastaMenu)'>Add</button>"],
+     ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
     var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
+    
     
     //array to store the users picked item prices
     var cost = [];
