@@ -87,3 +87,6 @@ For example:
   - *Added more arrays to the menu arrays which act as pricing*
   - *Added so the menu function now act as before (pushing item and price to their arrays)*
   - *Deleted old menu functions which made my endMenu function "useless" so deleted it aswell and implemented it into the allMenu function*
+
+- 2022-05-11 12:00 Worked for 2 hours
+  - *Added a new way to output the data for the user, dialogboxes is "glitchy" and sometimes not "responding" when pressing "OK". This took a long time of thinking and trying diffrent ways, including like a checkbox but went for buttons instead.*
