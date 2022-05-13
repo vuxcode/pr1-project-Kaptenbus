@@ -95,4 +95,4 @@ For example:
   - *Better code for new user output, also stores the price and the item in the arrays*
   - *Made a new feature that a when the user picks an new item it is shown under the Shopping cart*
   - *Made a updater function for the new feature since it wouldent update the numbers of items in "real time"*
-  - *Made it so i could change the stored prices from strings to numbers ["70"] => [70] since i noticed that my total cost diden't count the array, so i troubleshooted for a while*
+  - *Made it so i could change the stored prices from strings to numbers ["70"] => [70] since i noticed that my totalcost diden't count the array, so i troubleshooted for a while*
