@@ -5,7 +5,7 @@
 <center>
 
 <!--Output bigger text-->
-<h1 id="test">Welcome to Tony's!</h1>
+<h1 id="display">Welcome to Tony's!</h1>
 
 <!--Output smaller text-->
 <p>Click any of the buttons to pick from different menus.</p>
@@ -25,7 +25,7 @@
     //Binding the button to the variable "button4-5"
     var button4 = document.getElementById("cart");
     var button5 = document.getElementById("change");
-    var text = document.getElementById("test");
+    var text = document.getElementById("display");
 
     //array to store the users picked item prices
     var cost = [];
@@ -34,13 +34,15 @@
     var cart = [];
 
     //stores the users picked items from the menus is used with the orderList function
-   var listCart = "";
+    var listCart = "";
 
     // New variable for the setTimeout function
     var update = setTimeout(updateCart, 0);
 
+    var welcome = "Welcome to Tony's!";
+
     //
-    text.innerHTML = "Welcome to Tony's!";
+    text.innerHTML = welcome;
     button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
     
     //Binding the function to the variable "button4-5" and making it clickable
@@ -160,14 +162,17 @@
         //function which makes the users picked items in to an list.
         orderList();
 
+        // Cost array looks like '70' so cost[string] return [string] to [number]
+        var costNum = cost.map(string => {return Number(string);});
+
         //new variable that store the total cost of the user picked items
         var totalCost = 0;
 
         //loop for the cost array
-        for (var index1 = 0; index1 < cost.length; index1++)
+        for (var index1 = 0; index1 < costNum.length; index1++)
         {
             //makes all index of the cost to total sum (index0 + index1 and so on) that is shown in the total variable
-            totalCost += cost[index1];
+            totalCost += costNum[index1];
         }
 
         //Output for the user to see the order and accept/decline order.
@@ -182,6 +187,9 @@
             //if the user decide to change the order
             if (declineOrder == true)
             {
+
+                //Start screen
+                text.innerHTML = welcome;
                 //Enables the Change order button
                 //buttonEnable(button5);
             }
@@ -189,6 +197,8 @@
             //if user don't want to change order
             else
             {
+                //Startscreen
+                text.innerHTML = welcome;
                 //Disables the Shopping cart and Change order buttons
                 //buttonDisable(button4);
                 //buttonDisable(button5);
@@ -204,6 +214,9 @@
         //if the user accepts the order
         else
         {
+
+            //Start screen
+            text.innerHTML = welcome;
             //Output for the user after accepting the order
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
