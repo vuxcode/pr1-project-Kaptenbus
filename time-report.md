@@ -90,3 +90,9 @@ For example:
 
 - 2022-05-11 12:00 Worked for 2 hours
   - *Added a new way to output the data for the user, dialogboxes is "glitchy" and sometimes not "responding" when pressing "OK". This took a long time of thinking and trying diffrent ways, including like a checkbox but went for buttons instead.*
+
+- 2022-05-13 12:00 Worked for 3 hours
+  - *Better code for new user output, also stores the price and the item in the arrays*
+  - *Made a new feature that a when the user picks an new item it is shown under the Shopping cart*
+  - *Made a updater function for the new feature since it wouldent update the numbers of items in "real time"*
+  - *Made it so i could change the stored prices from strings to numbers ["70"] => [70] since i noticed that my total cost diden't count the array, so i troubleshooted for a while*
