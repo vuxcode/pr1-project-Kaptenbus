@@ -22,27 +22,11 @@
 <!--Start of the javascript code-->
 <script>
 
-    var text = document.getElementById("test");
-    text.innerHTML = "Welcome to Tony's!";
-
     //Binding the button to the variable "button4-5"
     var button4 = document.getElementById("cart");
     var button5 = document.getElementById("change");
-    
-    //Binding the function to the variable "button4-5" and making it clickable
-    button4.addEventListener("click", shoppingCart);
-    button5.addEventListener("click", changeOrder);
+    var text = document.getElementById("test");
 
-    //Shopping cart and Change order disabled from start.
-    buttonDisable(button4);
-    buttonDisable(button5);
-    
-    //arrays for the different functions menu
-    var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70],["Hawaiian", 70]];
-    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
-    var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
-    
-    
     //array to store the users picked item prices
     var cost = [];
 
@@ -50,7 +34,47 @@
     var cart = [];
 
     //stores the users picked items from the menus is used with the orderList function
-    var listCart = "";
+   var listCart = "";
+
+    // New variable for the setTimeout function
+    var update = setTimeout(updateCart, 0);
+
+    //
+    text.innerHTML = "Welcome to Tony's!";
+    button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
+    
+    //Binding the function to the variable "button4-5" and making it clickable
+    button4.addEventListener("click", shoppingCart);
+    button5.addEventListener("click", changeOrder);
+
+    //Shopping cart and Change order disabled from start.
+    //buttonDisable(button4);
+    //buttonDisable(button5);
+    
+    //arrays for the different functions menu
+    var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70],["Hawaiian", 70]];
+    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
+    var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
+
+    // Create a function to the cart
+    function updateCart() 
+    {
+        // Updating the visuel shopping cart number
+        button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
+        //so i can see that it still updating ("counting")
+        console.log(cart.length)
+        // Update the timer to run the count function again
+        update = setTimeout(updateCart, 1000);
+    }
+
+    // Function for stopping the updating of cart
+    function stopUpdate() 
+    {
+        // Clear the setTimeout in the update variable
+        clearTimeout(update);
+        // So i can see that the updating have been stopped
+        console.log("update stopped");
+    }
 
     //Function to make the users input in to an list. (the items the user picks from all the menus)
     function orderList()
@@ -112,7 +136,7 @@
         for (var index = 0; index < menu.length; index++)
         {
             //Make the arrays in to an string
-            listCart += menu[index][0] + " ";
+            listCart += menu[index][0] + " " + menu[index][1] + ":-"  + " ";
 
             //Make a button after each array index, that when clicked it pushes the item to cart/cost
             listCart += `<button onclick='cart.push("${menu[index][0]}") + cost.push("${menu[index][1]}")'>Add to cart</button>`;
@@ -127,6 +151,9 @@
     //Function for the "Shopping cart" button.
     function shoppingCart()
     {
+        //to stop the update of the cart
+        stopUpdate();
+        
         //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
         listCart = "";
         
@@ -134,17 +161,17 @@
         orderList();
 
         //new variable that store the total cost of the user picked items
-        var total = 0;
+        var totalCost = 0;
 
         //loop for the cost array
         for (var index1 = 0; index1 < cost.length; index1++)
         {
             //makes all index of the cost to total sum (index0 + index1 and so on) that is shown in the total variable
-            total += cost[index1];
+            totalCost += cost[index1];
         }
 
         //Output for the user to see the order and accept/decline order.
-        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + "\n" + listCart + "\n" + "Total cost is " + total + ":-");
+        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + "\n" + listCart + "\n" + "Total cost is " + totalCost + ":-");
 
         //if the user declines the order
         if (a == false)
@@ -156,15 +183,15 @@
             if (declineOrder == true)
             {
                 //Enables the Change order button
-                buttonEnable(button5);
+                //buttonEnable(button5);
             }
 
             //if user don't want to change order
             else
             {
                 //Disables the Shopping cart and Change order buttons
-                buttonDisable(button4);
-                buttonDisable(button5);
+                //buttonDisable(button4);
+                //buttonDisable(button5);
                 
                 //Emptying the cart array
                 cart = [];
@@ -181,8 +208,8 @@
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
             //Disables the Shopping cart and Change order buttons
-            buttonDisable(button4);
-            buttonDisable(button5);
+            //buttonDisable(button4);
+            //buttonDisable(button5);
                 
             //Emptying the cart array
             cart = [];
