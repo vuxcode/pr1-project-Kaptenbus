@@ -38,15 +38,8 @@
     buttonDisable(button5);
     
     //arrays for the different functions menu
-    var pizzaMenu = 
-    [["Calzone", 70], 
-    ["Kebbab", 80], 
-    ["Margherita", 70], 
-    ["Capricosa", 70],
-    ["Hawaiian", 70]];
-    var pastaMenu = 
-    [["Bolognese", 70, "<button onclick='test2(1, pastaMenu)'>Add</button>"],
-     ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
+    var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70],["Hawaiian", 70]];
+    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
     var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
     
     
@@ -112,40 +105,23 @@
     //function for all the different menus
     function allMenu(menu)
     {
-        //
+        //Empty the listCart
         listCart = "";
 
-        
         //A loop for all the different menus
         for (var index = 0; index < menu.length; index++)
         {
-            //Output for the user too choose which item they want
-            //var output = confirm(menu[index][0] + " " + menu[index][1] + ":-");
+            //Make the arrays in to an string
             listCart += menu[index][0] + " ";
 
-            listCart += `<button onclick='cart.push("${menu[index][0]}")'>Add</button>`;
+            //Make a button after each array index, that when clicked it pushes the item to cart/cost
+            listCart += `<button onclick='cart.push("${menu[index][0]}") + cost.push("${menu[index][1]}")'>Add to cart</button>`;
 
+            //Each array + price + button that is added after the first is showing on a new line
             listCart += "<br>"
-            //var text = document.getElementById("test");
-            //text.innerHTML = menu[index][0] + " " + menu[index][1] + ":-";
-
-            //If the user picks an item
-            //if (output == true)
-            //{
-                //Enables the Shopping cart button
-                //buttonEnable(button4);
-
-                //Pushing the item to the cart/cost array
-                //cart.push(menu[index][0]);
-                //cost.push(menu[index][1]);
-            //}
         }
-                    //var text = document.getElementById("test");
-                    //text.innerHTML = "Welcome to Tony's!";
+            //Update the <h1> text to listCart;
             text.innerHTML = listCart;
-
-        //gives the user the output "End of menu!"
-        //alert("End of menu!");
     }
 
     //Function for the "Shopping cart" button.
