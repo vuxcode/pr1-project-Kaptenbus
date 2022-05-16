@@ -96,3 +96,8 @@ For example:
   - *Made a new feature that a when the user picks an new item it is shown under the Shopping cart*
   - *Made a updater function for the new feature since it wouldent update the numbers of items in "real time"*
   - *Made it so i could change the stored prices from strings to numbers ["70"] => [70] since i noticed that my totalcost diden't count the array, so i troubleshooted for a while*
+
+- 2022-05-16 16:00 Worked for 2 hours
+  - *Fixed the updating function to not double the speed when function running a secound time*
+  - *Fixed so the disable/enable button now works as it is intendet to do*
+  - *Troubleshooting the program, fixed some minor bugs*
