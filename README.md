@@ -58,6 +58,10 @@ Make a function that "emptying" the arrays. Maybe make the changeOrder button al
 27/04-22
 Add comments to the new function, move the Shopping Cart and Change order button.
 
+13/5-22
+Need to figure out how to disable my buttons again.
+Also need to tune some of the updating feature.
+
 
 # Project Summary
 
