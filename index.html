@@ -15,7 +15,7 @@
 <button onclick="chooseMenu(2)">Pasta menu<br>1-4</button>
 <button onclick="chooseMenu(3)">Drink menu<br>1-4</button>
 <button id="cart">Shopping cart</button>
-<button id="change">Change order<br></button>
+<button id="change">Remove<br> item</button>
 
 </center>
 
@@ -75,7 +75,7 @@
     }
     }
     
-    // Create a function to the cart
+    // Function to update the inventory display of shopping cart
     function updateCart() 
     {
         // Updating the visuel shopping cart number
@@ -206,7 +206,7 @@
         if (a == false)
         {
             //Output for the user
-            var declineOrder = confirm("If you wish to change your order press 'OK' if not press 'CANCEL'.");
+            var declineOrder = confirm("If you wish to change your order press 'OK' if not press 'CANCEL'." + "\n" + "To add items, use the menu buttons.");
 
             //if the user decide to change the order
             if (declineOrder == true)
@@ -261,6 +261,12 @@
     //so the user can change their order
     function changeOrder()
     {
+        //Stop updating the cart
+        stopUpdate();
+
+        //Start screen
+        text.innerHTML = welcome;
+
         //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
         listCart = "";
         
