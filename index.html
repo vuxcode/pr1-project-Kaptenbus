@@ -38,10 +38,11 @@
 
     // New variable for the setTimeout function
     var update = setTimeout(updateCart, 0);
-
+    
+    //Welcome message
     var welcome = "Welcome to Tony's!";
 
-    //
+    //Start screen + shopping cart showing item value
     text.innerHTML = welcome;
     button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
     
@@ -58,6 +59,9 @@
     var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
     var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
 
+    //Stop the timer since it start because of the creation of the variable update
+    stopUpdate();
+    
     // Create a function to the cart
     function updateCart() 
     {
@@ -65,6 +69,8 @@
         button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
         //so i can see that it still updating ("counting")
         console.log(cart.length)
+        // Clear the timeout
+        clearTimeout(update)
         // Update the timer to run the count function again
         update = setTimeout(updateCart, 1000);
     }
@@ -131,6 +137,9 @@
     //function for all the different menus
     function allMenu(menu)
     {
+        //So the shopping cart update the value of stored items
+        updateCart();
+
         //Empty the listCart
         listCart = "";
 
@@ -163,7 +172,7 @@
         orderList();
 
         // Cost array looks like '70' so cost[string] return [string] to [number]
-        var costNum = cost.map(string => {return Number(string);});
+        var costNum = cost.map(Number);
 
         //new variable that store the total cost of the user picked items
         var totalCost = 0;
@@ -197,8 +206,6 @@
             //if user don't want to change order
             else
             {
-                //Startscreen
-                text.innerHTML = welcome;
                 //Disables the Shopping cart and Change order buttons
                 //buttonDisable(button4);
                 //buttonDisable(button5);
@@ -208,15 +215,16 @@
 
                 //Emptying the cost array
                 cost = [];
+
+            //Start screen + shopping cart showing item value
+            text.innerHTML = welcome;
+            button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
             }
         }
 
         //if the user accepts the order
         else
         {
-
-            //Start screen
-            text.innerHTML = welcome;
             //Output for the user after accepting the order
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
@@ -229,6 +237,10 @@
 
             //Emptying the cost array
             cost = [];
+            
+            //Start screen + shopping cart showing item value
+            text.innerHTML = welcome;
+            button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
         };
     };
 
@@ -266,6 +278,9 @@
 
                 //removes the RIGHT price
                 var removeCost = cost.splice(start, deleteindex);
+
+                //Updating the cart item value
+                button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
                 
                 //show excisting cart 
                 console.log(cart);
