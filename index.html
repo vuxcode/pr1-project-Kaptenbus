@@ -11,20 +11,27 @@
 <p>Click any of the buttons to pick from different menus.</p>
 
 <!--Buttons-->
-<button onclick="chooseMenu(1)">Pizza menu</button>
-<button onclick="chooseMenu(2)">Pasta menu</button>
-<button onclick="chooseMenu(3)">Drink menu</button>
+<button onclick="chooseMenu(1)">Pizza menu <br>1-5</button>
+<button onclick="chooseMenu(2)">Pasta menu<br>1-4</button>
+<button onclick="chooseMenu(3)">Drink menu<br>1-4</button>
 <button id="cart">Shopping cart</button>
-<button id="change">Change order</button>
+<button id="change">Change order<br></button>
 
 </center>
 
 <!--Start of the javascript code-->
 <script>
 
+    //arrays for the different functions menu
+    var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70],["Hawaiian", 70]];
+    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
+    var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
+
     //Binding the button to the variable "button4-5"
     var button4 = document.getElementById("cart");
     var button5 = document.getElementById("change");
+    
+    //Binding the <h1> text to the variable text
     var text = document.getElementById("display");
 
     //array to store the users picked item prices
@@ -44,29 +51,37 @@
 
     //Start screen + shopping cart showing item value
     text.innerHTML = welcome;
-    button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
+    button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
     
     //Binding the function to the variable "button4-5" and making it clickable
     button4.addEventListener("click", shoppingCart);
     button5.addEventListener("click", changeOrder);
 
     //Shopping cart and Change order disabled from start.
-    //buttonDisable(button4);
-    //buttonDisable(button5);
+    buttonDisable(button4);
+    buttonDisable(button5);
     
-    //arrays for the different functions menu
-    var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70],["Hawaiian", 70]];
-    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
-    var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
-
-    //Stop the timer since it start because of the creation of the variable update
+    //Stop the timer since it start because of the creation of the variable "update"
     stopUpdate();
+
+    //function to enable the shopping cart button
+    function unlockShoppingCart()
+    {
+        //if there is one or more items in the cart then enable the shopping cart button
+        if (cart.length >= 1)
+    {
+        //Enabling the shopping cart button
+        buttonEnable(button4);
+    }
+    }
     
     // Create a function to the cart
     function updateCart() 
     {
         // Updating the visuel shopping cart number
-        button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
+        button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+        //Enables the shopping cart IF an item is picked.
+        unlockShoppingCart();
         //so i can see that it still updating ("counting")
         console.log(cart.length)
         // Clear the timeout
@@ -171,7 +186,7 @@
         //function which makes the users picked items in to an list.
         orderList();
 
-        // Cost array looks like '70' so cost[string] return [string] to [number]
+        // Changing the cost array from strings to numbers ('70', => 70,)
         var costNum = cost.map(Number);
 
         //new variable that store the total cost of the user picked items
@@ -196,19 +211,18 @@
             //if the user decide to change the order
             if (declineOrder == true)
             {
-
                 //Start screen
                 text.innerHTML = welcome;
                 //Enables the Change order button
-                //buttonEnable(button5);
+                buttonEnable(button5);
             }
 
             //if user don't want to change order
             else
             {
                 //Disables the Shopping cart and Change order buttons
-                //buttonDisable(button4);
-                //buttonDisable(button5);
+                buttonDisable(button4);
+                buttonDisable(button5);
                 
                 //Emptying the cart array
                 cart = [];
@@ -218,7 +232,7 @@
 
             //Start screen + shopping cart showing item value
             text.innerHTML = welcome;
-            button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
+            button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
             }
         }
 
@@ -229,8 +243,8 @@
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
             //Disables the Shopping cart and Change order buttons
-            //buttonDisable(button4);
-            //buttonDisable(button5);
+            buttonDisable(button4);
+            buttonDisable(button5);
                 
             //Emptying the cart array
             cart = [];
@@ -240,7 +254,7 @@
             
             //Start screen + shopping cart showing item value
             text.innerHTML = welcome;
-            button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
+            button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
         };
     };
 
@@ -280,7 +294,7 @@
                 var removeCost = cost.splice(start, deleteindex);
 
                 //Updating the cart item value
-                button4.innerHTML = "Shopping cart" + "<br>" + cart.length;
+                button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
                 
                 //show excisting cart 
                 console.log(cart);
