@@ -82,19 +82,19 @@ Step2:
 
 Step3:
 >To view your cart and the total price of the item(s), you simply press the shopping cart button. (only works if there is a product in the cart)
-
+>
 >Optional: Add items from diffrent menus by pressing any of the other menu buttons and repeat Step2. (Pizza, pasta, drink)
 
 Step4:
 >To confirm your order press "OK" when in the "Shopping cart" then you will get a message that  tells you that the order is being processed.
-
+>
 >Optional: If you wish to change the order or decline, press "CANCEL". Then you'll get a new message that asks you if you wish to change the order press "OK" to change or "CANCEL" to decline.
 
 Step5: (Optional)
 >To remove an item from your cart press the "Remove item" button. Then you write the "item-name" you wish to remove, only one item is remove-able each time accesing the "Remove item" button. (only works if you press "OK" from Step4: Optional stage)
-
-To add more/new item(s) to your cart, press the menu buttons again. (only works if you press "OK" from Step4: Optional stage)
-
-When done with removing/adding repeat Step4:
+>
+>To add more/new item(s) to your cart, press the menu buttons again. (only works if you press "OK" from Step4: Optional stage)
+>
+>When done with removing/adding repeat Step4:
 
 
