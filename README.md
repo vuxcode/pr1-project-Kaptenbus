@@ -78,7 +78,7 @@ Step1:
 >Choose a menu of your liking by pressing the menu button. (Pizza, pasta, drink)
 
 Step2: 
->Add the item(s)/dish(es) you would like to buy by pressing the "Add to cart" button.
+>Add the item(s)/dish(es) you would like to order by pressing the "Add to cart" button.
 
 Step3:
 >To view your cart and the total price of the item(s), you simply press the shopping cart button. (only works if there is a product in the cart)
