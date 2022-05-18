@@ -101,3 +101,8 @@ For example:
   - *Fixed the updating function to not double the speed when function running a secound time*
   - *Fixed so the disable/enable button now works as it is intendet to do*
   - *Troubleshooting the program, fixed some minor bugs*
+
+- 2022-05-18 Worked for 1.5 hours
+  - *Removed a function that was completlly unessecery. (was reading through my codes an figure that out)*
+  - *Did more testing of the program*
+  - *Added a user guide*
