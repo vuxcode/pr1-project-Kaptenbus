@@ -93,8 +93,8 @@ Step4:
 Step5: (Optional)
 >To remove an item from your cart press the "Remove item" button. Then you write the "item-name" you wish to remove, only one item is remove-able each time accesing the "Remove item" button. (only works if you press "OK" from Step4: Optional stage)
 
->To add more/new item(s) to your cart, press the menu buttons again. (only works if you press "OK" from Step4: Optional stage)
+To add more/new item(s) to your cart, press the menu buttons again. (only works if you press "OK" from Step4: Optional stage)
 
->When done with removing/adding repeat Step4:
+When done with removing/adding repeat Step4:
 
 
