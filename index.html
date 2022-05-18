@@ -11,9 +11,9 @@
 <p>Click any of the buttons to pick from different menus.</p>
 
 <!--Buttons-->
-<button onclick="chooseMenu(1)">Pizza menu <br>1-5</button>
-<button onclick="chooseMenu(2)">Pasta menu<br>1-4</button>
-<button onclick="chooseMenu(3)">Drink menu<br>1-4</button>
+<button onclick="allMenu(pizzaMenu)">Pizza menu <br>1-5</button>
+<button onclick="allMenu(pastaMenu)">Pasta menu<br>1-4</button>
+<button onclick="allMenu(drinkMenu)">Drink menu<br>1-4</button>
 <button id="cart">Shopping cart</button>
 <button id="change">Remove<br> item</button>
 
@@ -64,7 +64,7 @@
     //Stop the timer since it start because of the creation of the variable "update"
     stopUpdate();
 
-    //function to enable the shopping cart button
+    // Function to enable the shopping cart button
     function unlockShoppingCart()
     {
         //if there is one or more items in the cart then enable the shopping cart button
@@ -99,7 +99,7 @@
         console.log("update stopped");
     }
 
-    //Function to make the users input in to an list. (the items the user picks from all the menus)
+    // Function to make the users input in to an list. (the items the user picks from all the menus)
     function orderList()
     {
         //a loop to show each item from the cart array
@@ -110,46 +110,21 @@
         }
     }
 
-    //function for disable any button
+    // Function for disable any button
     function buttonDisable(button)
     {
         //Disables button which is inputed in the "parameter" (button)
         button.disabled = true;
     }
 
-    //Function for enable any button
+    // Function for enable any button
     function buttonEnable(button)
     {
         //Enables button which is inputed in the "parameter" (button)
         button.disabled = false;
     }
 
-    //Function which put the right menu for the right pressed button
-    function chooseMenu(button)
-    {
-        //If the user press Pizza menu button
-        if (button == 1)
-        {
-            //Runs the allMenu function with the pizzaMenu array
-            allMenu(pizzaMenu);
-        }
-
-        //If the user press Pasta menu button
-        else if (button == 2)
-        {
-            //Runs the allMenu function with the pastaMenu array
-            allMenu(pastaMenu);
-        }
-        
-        ////If the user press Drink menu button
-        else
-        {
-            //Runs the allMenu function with the drinkMenu array
-            allMenu(drinkMenu);
-        }
-    }
-    
-    //function for all the different menus
+    // Function for all the different menus
     function allMenu(menu)
     {
         //So the shopping cart update the value of stored items
@@ -174,7 +149,7 @@
             text.innerHTML = listCart;
     }
 
-    //Function for the "Shopping cart" button.
+    // Function for the "Shopping cart" button.
     function shoppingCart()
     {
         //to stop the update of the cart
@@ -235,7 +210,6 @@
             button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
             }
         }
-
         //if the user accepts the order
         else
         {
@@ -258,7 +232,7 @@
         };
     };
 
-    //so the user can change their order
+    // Function for the user to remove an item
     function changeOrder()
     {
         //Stop updating the cart
