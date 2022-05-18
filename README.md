@@ -74,10 +74,8 @@ A conclusion on the budget. Did you manage to stick to the budget? Why? / Why no
 
 # User Guide
 
-> Write a clear user guide for how someone should use your program.
-
 Step1:
-Choose a menu of your liking by pressing the menu button. (Pizza, pasta, drink)
+>Choose a menu of your liking by pressing the menu button. (Pizza, pasta, drink)
 
 Step2: 
 Add the item(s)/dish(es) you would like to buy by pressing the "Add to cart" button.
