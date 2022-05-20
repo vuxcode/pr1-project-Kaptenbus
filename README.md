@@ -68,6 +68,7 @@ Also need to tune some of the updating feature.
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 
 
 A description of how you want to present the project to the world
+
 Ett flexibelt matbeställnings program som skulle funka i alla typer av snabbmatkedjor, företagen kan själv välja hur många menyer och vad de ska innehålla.
 
 A reflection of the experiences you had while creating the project
