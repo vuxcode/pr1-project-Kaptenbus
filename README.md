@@ -75,7 +75,7 @@ A reflection of the experiences you had while creating the project
 Jag var nog helt "klar" med mitt program tre gånger, vilket på sätt och vis var sant för programmet funkade precis som jag ville att de skulle göra.
 Men nästa dag jag kollade igenom mitt programs uppbyggnad hade jag alltid något som kunde ändras för att optimera min kod, jag skrev nya funktioner och jag tog bort onödiga/överflödiga funktioner. Ju mer jag jobbade på programmet desto mer ändra jag min kod, "changeOrder" och "shoppingCart" är nog ungefär de ända funktionerna som är i princip samma som när jag skrev de från början.
 
-I början så "letade" jag efter problem/buggar i mitt program vilket fick mig att skriva "småsaker" i min "bug-list", kändes som att det gick alldeles för lätt genom programmets uppbyggnad. "Buggarna" börja komma efter jag hade kodat klart mitt program dvs när jag började göra mina funktioner/koder mer komplicerade. Dom få "buggar" som uppstod löste jag vid samma tillfälle alternativt dagen efter. (Alltid bra att "sova" på saken)
+I början så "letade" jag efter problem/buggar i mitt program vilket fick mig att skriva "småsaker" i min "bug-list", kändes som att det gick alldeles för lätt genom programmets uppbyggnad. "Buggarna" börja komma efter jag hade kodat "klart" mitt program dvs när jag började göra mina funktioner/koder mer "komplicerade". Dom få "buggar" som uppstod löste jag vid samma tillfälle alternativt dagen efter. (Alltid bra att "sova" på saken)
 
 A list of what could be improved on the program if you had more time?
 
