@@ -68,9 +68,24 @@ Also need to tune some of the updating feature.
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 
 
 A description of how you want to present the project to the world
+Ett flexibelt matbeställnings program som skulle funka i alla typer av snabbmatkedjor, företagen kan själv välja hur många menyer och vad de ska innehålla.
+
 A reflection of the experiences you had while creating the project
+
+Jag var nog helt "klar" med mitt program tre gånger, vilket på sätt och vis var sant för programmet funkade precis som jag ville att de skulle göra.
+Men nästa dag jag kollade igenom mitt programs uppbyggnad hade jag alltid något som kunde ändras för att optimera min kod, jag skrev nya funktioner och jag tog bort onödiga/överflödiga funktioner. Ju mer jag jobbade på programmet desto mer ändra jag min kod, "changeOrder" och "shoppingCart" är nog ungefär de ända funktionerna som är i princip samma som när jag skrev de från början.
+
+I början så "letade" jag efter problem/buggar i mitt program vilket fick mig att skriva "småsaker" i min "bug-list", kändes som att det gick alldeles för lätt genom programmets uppbyggnad. "Buggarna" börja komma efter jag hade kodat klart mitt program dvs när jag började göra mina funktioner/koder mer komplicerade. Dom få "buggar" som uppstod löste jag vid samma tillfälle alternativt dagen efter. (Alltid bra att "sova" på saken)
+
 A list of what could be improved on the program if you had more time?
+
+Om jag hade haft mer tid så skulle jag:
+Om det fanns 2 likadana produkter i kundvagnen så skulle dom visa t.ex Pepsi 2st.
+Bearbeta och spara kundernas beställningar, spara dem så man faktiskt inte bara tar bort beställningen utan personalen faktiskt får informationen om vad som beställts. 
+
 A conclusion on the budget. Did you manage to stick to the budget? Why? / Why not?
+
+Tiden var alltid en "akilleshäl" för mig, känds som att jag valde ett alldeles för "lätt" projekt och att jag var "klar" för tidigt. Men nu i efterhand så känner jag tvärt om, då jag faktiskt har spenderat +35h och som jag skrev innan så utvecklade jag alltid min kodning även om programmet i sig kanske inte var någon skillnad från ett användarperspektiv. Vilket i slutändan gjorde att min tidsplan stämmde in ganska bra.
 
 # User Guide
 
