@@ -80,7 +80,7 @@ I början så "letade" jag efter problem/buggar i mitt program vilket fick mig a
 A list of what could be improved on the program if you had more time?
 
 Om jag hade haft mer tid så skulle jag:
->Om det fanns 2 likadana produkter i kundvagnen så skulle dom visa t.ex Pepsi 2st.
+>Om det fanns 2 likadana produkter i kundvagnen så skulle dom visa t.ex. Pepsi 2st.
 >
 >Bearbeta och spara kundernas beställningar, spara dem så man faktiskt inte bara tar bort beställningen utan personalen faktiskt får informationen om vad som beställts. 
 
