@@ -58,8 +58,8 @@
     button5.addEventListener("click", changeOrder);
 
     //Shopping cart and Change order disabled from start.
-    buttonDisable(button4);
-    buttonDisable(button5);
+    buttonState(button4, true);
+    buttonState(button5, true);
     
     //Stop the timer since it start because of the creation of the variable "update"
     stopUpdate();
@@ -69,10 +69,19 @@
     {
         //if there is one or more items in the cart then enable the shopping cart button
         if (cart.length >= 1)
-    {
-        //Enabling the shopping cart button
-        buttonEnable(button4);
-    }
+        {
+            //Enabling the shopping cart button
+            buttonState(button4, false);
+        }
+
+        //If cart array is empty then disable Shopping cart and Remove item button
+        else
+        {
+            //disables the Shopping cart and Remove item button
+            buttonState(button4, true);
+            buttonState(button5, true);
+        }
+
     }
     
     // Function to update the inventory display of shopping cart
@@ -110,18 +119,11 @@
         }
     }
 
-    // Function for disable any button
-    function buttonDisable(button)
+    // Function for disable/enable any button
+    function buttonState(which, state)
     {
         //Disables button which is inputed in the "parameter" (button)
-        button.disabled = true;
-    }
-
-    // Function for enable any button
-    function buttonEnable(button)
-    {
-        //Enables button which is inputed in the "parameter" (button)
-        button.disabled = false;
+        which.disabled = state;
     }
 
     // Function for all the different menus
@@ -189,15 +191,15 @@
                 //Start screen
                 text.innerHTML = welcome;
                 //Enables the Change order button
-                buttonEnable(button5);
+                buttonState(button5, false);
             }
 
             //if user don't want to change order
             else
             {
                 //Disables the Shopping cart and Change order buttons
-                buttonDisable(button4);
-                buttonDisable(button5);
+                buttonState(button4, true);
+                buttonState(button5, true);
                 
                 //Emptying the cart array
                 cart = [];
@@ -217,8 +219,8 @@
             alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
 
             //Disables the Shopping cart and Change order buttons
-            buttonDisable(button4);
-            buttonDisable(button5);
+            buttonState(button4, true);
+            buttonState(button5, true);
                 
             //Emptying the cart array
             cart = [];
@@ -273,8 +275,8 @@
                 //removes the RIGHT price
                 var removeCost = cost.splice(start, deleteindex);
 
-                //Updating the cart item value
-                button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+                //If cart array is empty, it disable the Shopping cart and Remove item buttons
+                updateCart();
                 
                 //show excisting cart 
                 console.log(cart);
