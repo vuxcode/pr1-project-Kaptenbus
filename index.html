@@ -51,7 +51,7 @@
 
     //Start screen + shopping cart showing item value
     text.innerHTML = welcome;
-    button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+    cartValue();
     
     //Binding the function to the variable "button4-5" and making it clickable
     button4.addEventListener("click", shoppingCart);
@@ -64,6 +64,21 @@
     //Stop the timer since it start because of the creation of the variable "update"
     stopUpdate();
 
+    //Clear cart/cost and listCart
+    function clearCarts()
+    {
+        cost = [];
+        cart = [];
+        listCart = "";
+    }
+
+    //Showing excisting cart value
+    function cartValue()
+    {
+        //showing excisting cart value
+        button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+    }
+
     // Function to enable the shopping cart button
     function unlockShoppingCart()
     {
@@ -75,7 +90,7 @@
         }
 
         //If cart array is empty then disable Shopping cart and Remove item button
-        else
+        if (cart.length == 0)
         {
             //disables the Shopping cart and Remove item button
             buttonState(button4, true);
@@ -88,7 +103,7 @@
     function updateCart() 
     {
         // Updating the visuel shopping cart number
-        button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+        cartValue();
         //Enables the shopping cart IF an item is picked.
         unlockShoppingCart();
         //so i can see that it still updating ("counting")
@@ -201,15 +216,12 @@
                 buttonState(button4, true);
                 buttonState(button5, true);
                 
-                //Emptying the cart array
-                cart = [];
-
-                //Emptying the cost array
-                cost = [];
+                //Clear cart/cost and listCart
+                clearCarts();
 
             //Start screen + shopping cart showing item value
             text.innerHTML = welcome;
-            button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+            cartValue();
             }
         }
         //if the user accepts the order
@@ -222,15 +234,12 @@
             buttonState(button4, true);
             buttonState(button5, true);
                 
-            //Emptying the cart array
-            cart = [];
-
-            //Emptying the cost array
-            cost = [];
+            //Clear cart/cost and listCart
+            clearCarts();
             
             //Start screen + shopping cart showing item value
             text.innerHTML = welcome;
-            button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+            cartValue();
         };
     };
 
@@ -277,6 +286,7 @@
 
                 //If cart array is empty, it disable the Shopping cart and Remove item buttons
                 updateCart();
+                stopUpdate();
                 
                 //show excisting cart 
                 console.log(cart);
