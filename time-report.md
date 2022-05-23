@@ -104,3 +104,8 @@
   - *Removed a function that was completlly unessecery. (was reading through my codes an figure that out)*
   - *Did more testing of the program*
   - *Added a user guide*
+
+- 2022-05-18 Worked for 2 hours
+  - *Made an <textarea> to work as a preview to the "shopping cart" then i wanted to make an <input type="text"> to work with the remove item function (changeOrder) but did not manage to make it work*
+  - *Made so that when you get 10 items in the cart, it would disable the menubuttons and the <h1> would display the welcome message, decided to remove this because if you would spam the add to cart buttons it could go to 16 items so this is not reliable and feelt "unprofessional". Would work better if i had programed it without the timer*
+  - *Made 2 new functions so i don't repeat the same line of code asmuch*
