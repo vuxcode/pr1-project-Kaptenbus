@@ -1,1 +1,310 @@
-<!-- Start writing your project code in this file! -->
+<!--Dark theme-->
+<meta name="color-scheme" content="dark">
+
+<!--Making the text and buttons display in the "center"-->
+<center>
+
+<!--Output bigger text-->
+<h1 id="display">Welcome to Tony's!</h1>
+
+<!--Output smaller text-->
+<p>Click any of the buttons to pick from different menus. <br> Max: 20 items per order.</p>
+
+<!--Buttons-->
+<button onclick="allMenu(pizzaMenu)">Pizza menu <br>1-5</button>
+<button onclick="allMenu(pastaMenu)">Pasta menu<br>1-4</button>
+<button onclick="allMenu(drinkMenu)">Drink menu<br>1-4</button>
+<button id="cart">Shopping cart</button>
+<button id="change">Remove<br> item</button>
+
+</center>
+
+<!--Start of the javascript code-->
+<script>
+
+    //arrays for the different functions menu
+    var pizzaMenu = [["Calzone", 70], ["Kebbab", 80], ["Margherita", 70], ["Capricosa", 70],["Hawaiian", 70]];
+    var pastaMenu = [["Bolognese", 70], ["Carbonara", 90], ["Lasagne", 80], ["Ravioli", 60]];
+    var drinkMenu = [["Pepsi", 15], ["Fanta", 15], ["Sprite", 15],  ["Water", 10]];
+
+    //Binding the button to the variable "button4-5"
+    var button4 = document.getElementById("cart");
+    var button5 = document.getElementById("change");
+    
+    //Binding the <h1> text to the variable text
+    var text = document.getElementById("display");
+
+    //array to store the users picked item prices
+    var cost = [];
+
+    //array for shoppingCart function stores the users input (choices from the menus)
+    var cart = [];
+
+    //stores the users picked items from the menus is used with the orderList function
+    var listCart = "";
+
+    // New variable for the setTimeout function
+    var update = setTimeout(updateCart, 0);
+    
+    //Welcome message
+    var welcome = "Welcome to Tony's!";
+
+    //Start screen + shopping cart showing item value
+    text.innerHTML = welcome;
+    cartValue();
+    
+    //Binding the function to the variable "button4-5" and making it clickable
+    button4.addEventListener("click", shoppingCart);
+    button5.addEventListener("click", changeOrder);
+
+    //Shopping cart and Change order disabled from start.
+    buttonState(button4, true);
+    buttonState(button5, true);
+    
+    //Stop the timer since it start because of the creation of the variable "update"
+    stopUpdate();
+
+    //Clear cart/cost and listCart
+    function clearCarts()
+    {
+        cost = [];
+        cart = [];
+        listCart = "";
+    }
+
+    //Showing excisting cart value
+    function cartValue()
+    {
+        //showing excisting cart value
+        button4.innerHTML = "Shopping cart" + "<br>" + "Items " + cart.length;
+    }
+
+    // Function to enable the shopping cart button
+    function unlockShoppingCart()
+    {
+        //if there is one or more items in the cart then enable the shopping cart button
+        if (cart.length >= 1)
+        {
+            //Enabling the shopping cart button
+            buttonState(button4, false);
+        }
+
+        //If cart array is empty then disable Shopping cart and Remove item button
+        if (cart.length == 0)
+        {
+            //disables the Shopping cart and Remove item button
+            buttonState(button4, true);
+            buttonState(button5, true);
+        }
+
+    }
+    
+    // Function to update the inventory display of shopping cart
+    function updateCart() 
+    {
+        // Updating the visuel shopping cart number
+        cartValue();
+        //Enables the shopping cart IF an item is picked.
+        unlockShoppingCart();
+        //so i can see that it still updating ("counting")
+        console.log(cart.length)
+        // Clear the timeout
+        clearTimeout(update)
+        // Update the timer to run the count function again
+        update = setTimeout(updateCart, 1000);
+    }
+
+    // Function for stopping the updating of cart
+    function stopUpdate() 
+    {
+        // Clear the setTimeout in the update variable
+        clearTimeout(update);
+        // So i can see that the updating have been stopped
+        console.log("update stopped");
+    }
+
+    // Function to make the users input in to an list. (the items the user picks from all the menus)
+    function orderList()
+    {
+        //a loop to show each item from the cart array
+        for (var index = 0; index < cart.length; index++)
+        {
+            //listCart += the cart[index] starting from the first item [0] + a newline
+            listCart += cart[index] + "\n";
+        }
+    }
+
+    // Function for disable/enable any button
+    function buttonState(which, state)
+    {
+        //Disables button which is inputed in the "parameter" (button)
+        which.disabled = state;
+    }
+
+    // Function for all the different menus
+    function allMenu(menu)
+    {
+        //So the shopping cart update the value of stored items
+        updateCart();
+
+        //Empty the listCart
+        listCart = "";
+
+        //A loop for all the different menus
+        for (var index = 0; index < menu.length; index++)
+        {
+            //Make the first menu index in the array + price show as a string ( Pepsi 15:- )
+            listCart += menu[index][0] + " " + menu[index][1] + ":-"  + " ";
+
+            //Make a button after each array index, that when clicked it pushes the item to cart/cost
+            listCart += `<button onclick='cart.push("${menu[index][0]}") + cost.push("${menu[index][1]}")'>Add to cart</button>`;
+
+            //Each array + price + button that is added after the first is showing on a new line
+            listCart += "<br>"
+        }
+            //Update the <h1> text to listCart;
+            text.innerHTML = listCart;
+    }
+
+    // Function for the "Shopping cart" button.
+    function shoppingCart()
+    {
+        //to stop the update of the cart
+        stopUpdate();
+        
+        //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
+        listCart = "";
+        
+        //function which makes the users picked items in to an list.
+        orderList();
+
+        // Changing the cost array from strings to numbers ('70', => 70,)
+        var costNum = cost.map(Number);
+
+        //new variable that store the total cost of the user picked items
+        var totalCost = 0;
+
+        //loop for the cost array
+        for (var index1 = 0; index1 < costNum.length; index1++)
+        {
+            //makes all index of the cost to total sum (index0 + index1 and so on) that is shown in the total variable
+            totalCost += costNum[index1];
+        }
+
+        //Output for the user to see the order and accept/decline order.
+        var a = confirm("Press OK to accept order, CANCEL to decline/change order." + "\n" + "\n" + listCart + "\n" + "Total cost is " + totalCost + ":-");
+
+        //if the user declines the order
+        if (a == false)
+        {
+            //Output for the user
+            var declineOrder = confirm("If you wish to change your order press 'OK' if not press 'CANCEL'." + "\n" + "To add items, use the menu buttons.");
+
+            //if the user decide to change the order
+            if (declineOrder == true)
+            {
+                //Start screen
+                text.innerHTML = welcome;
+                //Enables the Change order button
+                buttonState(button5, false);
+            }
+
+            //if user don't want to change order
+            else
+            {
+                //Disables the Shopping cart and Change order buttons
+                buttonState(button4, true);
+                buttonState(button5, true);
+                
+                //Clear cart/cost and listCart
+                clearCarts();
+
+            //Start screen + shopping cart showing item value
+            text.innerHTML = welcome;
+            cartValue();
+            }
+        }
+        //if the user accepts the order
+        else
+        {
+            //Output for the user after accepting the order
+            alert("Your order is being processed!" + "\n" + "Thank you for choosing Tony's!");
+
+            //Disables the Shopping cart and Change order buttons
+            buttonState(button4, true);
+            buttonState(button5, true);
+                
+            //Clear cart/cost and listCart
+            clearCarts();
+            
+            //Start screen + shopping cart showing item value
+            text.innerHTML = welcome;
+            cartValue();
+        };
+    };
+
+    // Function for the user to remove an item
+    function changeOrder()
+    {
+        //Stop updating the cart
+        stopUpdate();
+
+        //Start screen
+        text.innerHTML = welcome;
+
+        //to clear the stored items that the user picks so they don't show 2x times when reopening shoppingCart/changeOrder
+        listCart = "";
+        
+        //function which makes the users picked items in to an list.
+        orderList();
+
+        //Output for the user
+        var order = prompt("Write which item you want to remove." + "\n" + listCart);
+        
+        //Fixing an error i had with pressing cancel on the prompt
+        if (order)
+        {        
+            //make the users input to lowercase
+            order = order.toLowerCase();
+
+            //Users input then make a uppercase first letter then + the rest of the users input
+            order = order.charAt(0).toUpperCase() + order.slice(1);
+
+            //if the user input an item that he/she have in the cart
+            if (cart.includes(order))
+            {
+                //var start will have the index of the users input of the prompt
+                var start = cart.indexOf(order);
+
+                var deleteindex = 1;
+                
+                //Removes the users input
+                var remove = cart.splice(start, deleteindex);
+
+                //removes the RIGHT price
+                var removeCost = cost.splice(start, deleteindex);
+
+                //If cart array is empty, it disable the Shopping cart and Remove item buttons
+                updateCart();
+                stopUpdate();
+                
+                //show excisting cart 
+                console.log(cart);
+                //show item removed
+                console.log(remove);
+                //show excisting cost
+                console.log(cost)
+                //show which price removed
+                console.log(removeCost);
+            }
+
+            //any spelling errors or numbers in the users input
+            else
+            {
+                //output for the user
+                alert("Maybe your spelling was incorrect, no numbers are allowed.");
+            } 
+        }
+    }
+    
+</script>
